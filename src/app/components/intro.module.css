@@ -1,0 +1,54 @@
+
+/* Utility Classes */
+.animate {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animate--infinite {
+    animation-iteration-count: infinite;
+}
+
+.animate--delay-1s {
+    animation-delay: 1s;
+}
+
+
+
+/* Animations */
+
+@keyframes greet {
+    from {
+        transform: translateX(-10px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.picEmoji {
+    /* transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s; */
+
+    transition: transform 0.3s ease 0s;
+}
+.picEmoji:hover {
+    transform: translate(-10px);
+}
+
+.greetAnimation {
+    /* animation-name: greet;
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in;
+    animation-delay: 2s;
+    animation-iteration-count: 10;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: both; */
+
+    /* transform: translateX(-150px); */ 
+
+    animation: greet 0.1s ease-in 1s 10 alternate-reverse;
+}

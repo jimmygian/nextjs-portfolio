@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import project1 from "@/public/placeholder1.png";
-import project2 from "@/public/placeholder2.png";
-import project3 from "@/public/placeholder3.png";
+import project1 from "@public/placeholder1.png";
+import project2 from "@public/placeholder2.png";
+import project3 from "@public/placeholder3.png";
 
 export const links = [
   {
