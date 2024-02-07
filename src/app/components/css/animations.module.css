@@ -1,0 +1,119 @@
+/* Animations Cheat-sheet */
+
+/* animation-name: greet;
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in;
+    animation-delay: 2s;
+    animation-iteration-count: 10;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: both; */
+
+/* Transitions Cheat-sheet */
+
+/* transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s; */
+
+
+
+
+/* Utility Classes */
+
+.animate {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate.animateInfinite {
+  animation-iteration-count: infinite;
+}
+
+.animate.animateDirectionARev {
+  animation-direction: alternate-reverse;
+}
+
+.animate.animateDelay1s {
+  animation-delay: 1s;
+}
+
+.animate.animateFast1 {
+  animation-duration: 0.1s;
+}
+.animate.animateFast6 {
+  animation-duration: 0.6s;
+}
+
+.animate.animateSlow3 {
+  animation-duration: 3s;
+}
+
+/* Animations */
+
+@keyframes greet {
+  from {
+    transform: translateX(-10px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Animations - specific */
+
+.animate.animationGreet {
+  animation: greet 0.1s ease-in 1s 10 alternate-reverse;
+}
+
+
+/* Transitions */
+
+.picEmoji {
+  transition: transform 0.3s ease 0s;
+}
+.picEmoji:hover {
+  transform: translate(-10px);
+}
+
+.transitionBtn {
+  transition: transform 0.2s linear 0s;
+}
+
+.transitionBtn:hover,
+.transitionBtn:focus {
+  transform: scale(102%);
+}
