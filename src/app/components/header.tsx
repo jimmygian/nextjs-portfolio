@@ -12,7 +12,7 @@ export default function Header() {
     // <header className='z-[999] relative'>
     //     <div className="fixed top-0 left-1/2 h-[4.5rem] -translate-x-1/2 w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"></div>
     // </header>
-    <header className={`${animate.animate} ${animate.headerDown} ${animate.anmDur1} ${animate.anmDel04}} ${animate.anmFillBoth} z-[999] relative`}>
+    <header className={`${animate.animate} ${animate.headerDown} ${animate.anmDur1} ${animate.anmDel04}} ${animate.anmFillBck} z-[999] relative`}>
         <div className="fixed top-0 w-[100vw] h-14 rounded-none bg-white shadow-md shadow-black/5 border border-white border-opacity-40 bg-opacity-80 backdrop-blur-[0.5rem] sm:top-5 sm:h-[3.20rem] sm:w-[36rem] left-1/2 -translate-x-1/2 sm:rounded-full"
         ></div>
 

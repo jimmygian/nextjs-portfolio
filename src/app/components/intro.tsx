@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import animate from "./css/animations.module.css";
 
@@ -40,19 +40,34 @@ export default function Intro() {
 
       {/* Buttons */}
       <div
-        className={`${animate.animate} ${animate.up} ${animate.anmDur04} ${animate.anmDel04} ${animate.anmFillBck} flex items-center justify-center gap-1 sm:gap-3 mt-[1rem]`}
+        className={`${animate.animate} ${animate.up} ${animate.anmDur04} ${animate.anmDel04} ${animate.anmFillBck} flex items-center justify-center gap-3 mt-[1rem] flex-wrap`}
       >
         <Link
-          className="bg-gray-900 text-white shadow-md shadow-[#ffffff] px-7 py-3 flex items-center gap-2 rounded-full"
+          className="group bg-gray-900 text-white shadow-md shadow-[#ffffff] px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-110 active:scale-105 transition"
           href="#contact"
         >
-          Contact me here <BsArrowRight />
+          Contact me here <BsArrowRight className="opacity-70 group-hover:translate-x-2 transition"/>
         </Link>
         <a
-          className="bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full shadow-sm shadow-[#00000071]"
-          href=""
+          className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full shadow-sm shadow-[#00000071] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition"
+          href="/CV-ph.pdf"
+          download={true}
         >
-          Download CV <HiDownload />{" "}
+          Download CV <HiDownload className="opacity-70 group-hover:scale-125 transition"/>
+        </a>
+        <a 
+          href="https://linkedin.com/jimmygian"
+          target="_blank"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition"
+        >
+          <BsLinkedin />
+        </a>
+        <a 
+          href="https://github.com/jimmygian"
+          target="_blank"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition"
+        >
+          <BsGithub />
         </a>
       </div>
     </section>
