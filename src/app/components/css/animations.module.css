@@ -1,3 +1,7 @@
+.animate {
+  --bez-fastToSlow: cubic-bezier(0, .8, 0, 1);
+}
+
 /* Animations Cheat-sheet */
 
 /* animation-name: greet;
@@ -25,48 +29,130 @@
   animation-fill-mode: both;
 }
 
+/* COUNT */
 .animate.animateInfinite {
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite !important;
 }
 
-.animate.animateDirectionARev {
-  animation-direction: alternate-reverse;
+/* DIRECTIONS */
+.animate.anmDirAlt {
+  animation-direction: alternate !important;
+}
+.animate.anmDirRev {
+  animation-direction: reverse !important;
+}
+.animate.anmDirARev {
+  animation-direction: alternate-reverse !important;
+}
+.animate.animateDirNorm {
+  animation-direction: normal !important;
 }
 
-.animate.animateDelay1s {
-  animation-delay: 1s;
+/* DELAYS */
+.animate.anmDel03 {
+  animation-delay: 0.3s !important;
+}
+.animate.anmDel04 {
+  animation-delay: 0.4s !important;
+}
+.animate.anmDel05 {
+  animation-delay: 0.5s !important;
+}
+.animate.anmDel08 {
+  animation-delay: 0.8s !important;
+}
+.animate.anmDel1 {
+  animation-delay: 1s !important;
+}
+.animate.anmDel2 {
+  animation-delay: 2s !important;
+}
+.animate.anmDel3 {
+  animation-delay: 3s !important;
 }
 
-.animate.animateFast1 {
-  animation-duration: 0.1s;
+/* DURATIONS */
+.animate.anmDur01 {
+  animation-duration: 0.1s !important;
 }
-.animate.animateFast6 {
-  animation-duration: 0.6s;
+.animate.anmDur03 {
+  animation-duration: 0.3s !important;
+}
+.animate.anmDur04 {
+  animation-duration: 0.4s !important;
+}
+.animate.anmDur05 {
+  animation-duration: 0.5s !important;
+}
+.animate.anmDur06 {
+  animation-duration: 0.6s !important;
+}
+.animate.anmDur1 {
+  animation-duration: 1s !important;
+}
+.animate.anmDur2 {
+  animation-duration: 2s !important;
+}
+.animate.anmDur3 {
+  animation-duration: 3s !important;
 }
 
-.animate.animateSlow3 {
-  animation-duration: 3s;
+/* FILL MODE */
+.animate.anmFillBck {
+  animation-fill-mode: backwards !important;
 }
+.animate.anmFillFrw {
+  animation-fill-mode: forwards !important;
+}
+.animate.anmFillBoth {
+  animation-fill-mode: both !important;
+}
+
+
 
 /* Animations */
 
-@keyframes greet {
+@keyframes slide-down {
   from {
-    transform: translateX(-10px);
+    transform: translateY(-1.7rem);
+    opacity: 0;
   }
-
   to {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@keyframes rotate360 {
+@keyframes slide-up {
   from {
-    transform: rotate(0);
+    transform: translateY(1.7rem);
+    opacity: 0;
   }
 
   to {
-    transform: rotate(360);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down-2 {
+  0% {
+      opacity: 0;
+      transform: translateY(-40rem);
+  }
+  100% {
+      opacity: 1;
+      transform: none;
+  }
+}
+
+@keyframes rotate20 {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(20deg);
   }
 }
 
@@ -91,29 +177,42 @@
   }
 }
 
-
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 /* Animations - specific */
 
 .animate.animationGreet {
-  animation: greet 0.1s ease-in 1s 10 alternate-reverse;
+  animation: rotate20 0.1s ease-in 1s 10 var(--bez-fastToSlow) alternate-reverse;
+  transform-origin: bottom right;
 }
 
+.animate.up {
+  animation: slide-up .5s ease-in;
+}
+
+.animate.down {
+  animation: slide-down .5s ease-in;
+  content: "";    
+}
+
+.animate.zoomIn {
+  animation: zoomIn .5s ease-in;
+  content: "";    
+}
+
+.animate.headerDown {
+  animation: slide-down-2 0.5s var(--bez-fastToSlow);
+  animation-fill-mode: backwards;
+  content: "";    
+}
 
 /* Transitions */
-
-.picEmoji {
-  transition: transform 0.3s ease 0s;
-}
-.picEmoji:hover {
-  transform: translate(-10px);
-}
-
-.transitionBtn {
-  transition: transform 0.2s linear 0s;
-}
-
-.transitionBtn:hover,
-.transitionBtn:focus {
-  transform: scale(102%);
-}
