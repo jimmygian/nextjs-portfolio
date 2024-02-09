@@ -2,6 +2,8 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+
+// Importing images from public lib (Static Img Data)
 import project1 from "@public/placeholder1.png";
 import project2 from "@public/placeholder2.png";
 import project3 from "@public/placeholder3.png";
@@ -62,25 +64,39 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "CV Master",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "An all-in-one web application that allows users to quickly create, keep track, and tailor Web-Dev CVs using Markdown syntax.",
+    tags: ["JavaScript", "React", "Bootstrap", "node.js", "localStorage"],
     imageUrl: project3,
   },
   {
-    title: "rmtDev",
+    title: "Wallet Wizard",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "A easy-to-use finance management app that allows users to track their expenses and manage their custom-made budgets.",
+    tags: ["JavaScript", "APIs", "Bootstrap", "Custom CSS"],
     imageUrl: project1,
   },
   {
-    title: "Word Analytics",
+    title: "Audio Operations",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      "An Electron app that provides users with a simple interface and allows them to perform specific audio operations, such as splitting, merging multi-channel files and more.",
+    tags: ["JavaScript", "Python", "Electron", "Bootstrap", "FFmpeg"],
     imageUrl: project2,
+  },
+  {
+    title: "Next.js Portfolio",
+    description:
+      "This very website portfolio, that's utilizing the latest front-end development technologies (TypeScript, next.js, tailwind CSS) to improve SEO, responsiveness, and interactivity.",
+    tags: ["TypeScript", "next.js", "Tailwind CSS"],
+    imageUrl: project1,
+  },
+  {
+    title: "WebM Converter",
+    description:
+      "A cross-platform Electron app that allows users to convert one or more videos to WebM format. Specifically made for internal use within Forever Audio (audio post-production company)",
+    tags: ["JavaScript", "Electron", "Custom CSS", "FFmpeg", "electron-builder", "webpack"],
+    imageUrl: project3,
   },
 ] as const;
 
