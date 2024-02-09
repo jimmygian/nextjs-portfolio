@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import animate from "./css/animations.module.css";
+import animate from "@app/components/css/animations.module.css";
 
 export default function Intro() {
   return (
@@ -30,13 +30,13 @@ export default function Intro() {
       </div>
 
       {/* Hero text */}
-      <p
+      <h1
         className={`${animate.animate} ${animate.up} ${animate.anmDur04} text-center pt-2 text-3xl sm:text-4xl ps-10 pe-10 max-w-[50rem] font-medium !leading-[1.5]`}
       >
         <span className="font-bold">Hello, I'm Dimitris.</span> A{" "}
         <span className="font-bold">Front End Developer</span> with a passion
         for creating dynamic web applications.
-      </p>
+      </h1>
 
       {/* Buttons */}
       <div
@@ -58,14 +58,14 @@ export default function Intro() {
         <a 
           href="https://linkedin.com/jimmygian"
           target="_blank"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-[1.15] hover:scale-110 active:scale-[1.15] transition"
         >
           <BsLinkedin />
         </a>
         <a 
           href="https://github.com/jimmygian"
           target="_blank"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-[1.15] hover:scale-110 active:scale-[1.15] transition"
         >
           <BsGithub />
         </a>

@@ -1,9 +1,16 @@
-import Intro from "@app/components/intro"
+import Intro from "@app/components/sections/intro"
+import SectionDivider from "@app/components/sections/section-divider"
+import About from "@app/components/sections/about"
+import Projects from "@app/components/sections/projects"
+import { Component } from "react"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pt-[6.5rem]">
+    <main className="flex min-h-screen flex-col items-center pt-[6.5rem]">
     <Intro />
+    <SectionDivider />
+    <About />
+    <Projects />
     </main>
   )
 }

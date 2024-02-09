@@ -4,7 +4,7 @@ import React from 'react'
 // import { motion } from 'framer-motion'
 import { links } from '@lib/data';
 import Link from 'next/link';
-import animate from './css/animations.module.css';
+import animate from "@app/components/css/animations.module.css";
 
 
 export default function Header() {
