@@ -5,7 +5,7 @@ import ProjectCard from './components/project'
 
 export default function Projects() {
   return (
-    <section>
+    <section className='text-center'>
       <SectionHeader>My projects</SectionHeader>
       <div>
         {
