@@ -7,7 +7,7 @@ import animate from "@app/components/css/animations.module.css";
 
 export default function Intro() {
   return (
-    <section className="mt-[0.3rem] sm:mt-[2rem]">
+    <section className="mt-[4.3rem] sm:mt-[2rem] h-[83vh] sm:h-[40vh]">
       {/* Image */}
       <div
         className={`${animate.animate} ${animate.zoomIn} ${animate.anmDur04} flex items-center justify-center`}
