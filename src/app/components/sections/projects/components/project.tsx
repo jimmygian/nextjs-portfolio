@@ -1,7 +1,13 @@
-import React from "react";
+"use client"
+
+import React, { useRef, useEffect, useState } from "react";
 import { projectsData } from "@lib/data";
 import Image from "next/image";
 import project from "../projects.module.css";
+import { useIntersectionObserver } from "@/lib/useInObserver";
+import { useIntersectionObserverAll } from "@/lib/useInObserverAll";
+import animate from '@app/components/css/animations.module.css';
+
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -11,10 +17,24 @@ export default function ProjectCard(props: ProjectProps) {
   const tags = props.tags;
   const imgUrl = props.imageUrl;
 
+
+  // Setting element visibility trackers
+  const articleRef = useRef<HTMLDivElement>(null);
+  const articleInData = useIntersectionObserver(articleRef);
+  const skillsRef = useRef<HTMLUListElement>(null);
+  const skillsInData = useIntersectionObserver(skillsRef);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const titleInData = useIntersectionObserver(titleRef);
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const textInData = useIntersectionObserver(textRef);
+
   return (
     <article
+
+      ref={articleRef}
       tabIndex={0}
       className={`${project.project} 
+        ${articleInData.inView ? `${animate.animate} ${animate.up} ${animate.anmDur02}` : "opacity-0"}
         group 
         relative
         bg-gray-100 
@@ -40,9 +60,12 @@ export default function ProjectCard(props: ProjectProps) {
         cursor-pointer
       `}
     >
+
       {/* Text */}
       <div
-        className={`max-w-[100%] 
+        className={`
+
+          max-w-[100%] 
           sm:max-w-[50%] 
           p-6 
           flex 
@@ -52,10 +75,29 @@ export default function ProjectCard(props: ProjectProps) {
           sm:group-even:text-left
         `}
       >
-        <h3 className={`text-2xl font-semibold`}>{title}</h3>
-        <p className={`mt-2 leading-relaxed text-gray-500`}>{description}</p>
+        <h3 
+          ref={titleRef}
+          className={`
+            ${titleInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0"}
+            text-2xl font-semibold`}
+        >
+          {title}
+        </h3>
+
+        <p 
+          ref={textRef}
+          className={`
+            ${textInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0"}
+            mt-2 leading-relaxed text-gray-500`}
+        >
+          {description}
+        </p>
+
         <ul
-          className={`flex flex-wrap gap-2 mt-4 sm:mt-auto group-even:justify-end sm:group-even:justify-start`}
+          ref={skillsRef}
+          className={`
+            ${skillsInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0"}
+            flex flex-wrap gap-2 mt-4 sm:mt-auto group-even:justify-end sm:group-even:justify-start`}
         >
           {tags.map((tag, index) => (
             <li
@@ -71,7 +113,8 @@ export default function ProjectCard(props: ProjectProps) {
       {/* Image */}
       <div className="flex-grow relative">
         <Image
-          className={` sm:absolute
+          className={` 
+            sm:absolute
             top-6 -right-3
             rounded-t-lg shadow-2xl 
             transition

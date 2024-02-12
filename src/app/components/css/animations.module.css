@@ -75,6 +75,9 @@
 .animate.anmDur01 {
   animation-duration: 0.1s !important;
 }
+.animate.anmDur02 {
+  animation-duration: 0.2s !important;
+}
 .animate.anmDur03 {
   animation-duration: 0.3s !important;
 }
