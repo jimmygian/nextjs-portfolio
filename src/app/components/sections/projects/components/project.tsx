@@ -1,13 +1,12 @@
 "use client"
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, CSSProperties } from "react";
 import { projectsData } from "@lib/data";
 import Image from "next/image";
 import project from "../projects.module.css";
 import { useIntersectionObserver } from "@/lib/useInObserver";
 import { useIntersectionObserverAll } from "@/lib/useInObserverAll";
 import animate from '@app/components/css/animations.module.css';
-
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -17,24 +16,32 @@ export default function ProjectCard(props: ProjectProps) {
   const tags = props.tags;
   const imgUrl = props.imageUrl;
 
-
   // Setting element visibility trackers
   const articleRef = useRef<HTMLDivElement>(null);
   const articleInData = useIntersectionObserver(articleRef);
   const skillsRef = useRef<HTMLUListElement>(null);
   const skillsInData = useIntersectionObserver(skillsRef);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const titleInData = useIntersectionObserver(titleRef);
+  // const titleInData = useIntersectionObserver(titleRef);
   const textRef = useRef<HTMLParagraphElement>(null);
-  const textInData = useIntersectionObserver(textRef);
+  // const textInData = useIntersectionObserver(textRef);
+
+  // const IntersectArr = useIntersectionObserverAll([articleRef, skillsRef, titleRef, textRef])
+  const ratio = useRef<Number | null>(null);
+  ratio.current = Number((articleInData.ratio).toFixed(2));
+
+  console.log(ratio.current)
+
+  const myStyles: CSSProperties = {
+    opacity: `${ratio.current}`
+  }
 
   return (
     <article
-
       ref={articleRef}
       tabIndex={0}
+      style={myStyles}
       className={`${project.project} 
-        ${articleInData.inView ? `${animate.animate} ${animate.up} ${animate.anmDur02}` : "opacity-0"}
         group 
         relative
         bg-gray-100 
@@ -58,6 +65,7 @@ export default function ProjectCard(props: ProjectProps) {
         focus:scale-[1.03]
         focus:bg-gray-200 
         cursor-pointer
+
       `}
     >
 
@@ -78,7 +86,7 @@ export default function ProjectCard(props: ProjectProps) {
         <h3 
           ref={titleRef}
           className={`
-            ${titleInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0"}
+            ${"" /*titleInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0" */}
             text-2xl font-semibold`}
         >
           {title}
@@ -87,7 +95,7 @@ export default function ProjectCard(props: ProjectProps) {
         <p 
           ref={textRef}
           className={`
-            ${textInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0"}
+            ${"" /* textInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0" */}
             mt-2 leading-relaxed text-gray-500`}
         >
           {description}
@@ -96,7 +104,7 @@ export default function ProjectCard(props: ProjectProps) {
         <ul
           ref={skillsRef}
           className={`
-            ${skillsInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0"}
+            ${skillsInData.inView ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0"}
             flex flex-wrap gap-2 mt-4 sm:mt-auto group-even:justify-end sm:group-even:justify-start`}
         >
           {tags.map((tag, index) => (

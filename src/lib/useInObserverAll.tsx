@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState, useRef, RefObject } from "react";
 
 interface IntersectionData {
@@ -9,18 +11,25 @@ interface IntersectionData {
 }
 
 export function useIntersectionObserverAll(refs: RefObject<Element>[]): IntersectionData[] {
-    const [intersectionData, setIntersectionData] = useState<IntersectionData[]>([]);
+    // Initialize intersectionData when refs change
+    const initialIntersectionData: IntersectionData[] = refs.map((ref, index) => ({
+        ref,
+        index,
+        inView: false,
+        ratio: 0,
+        shown: false
+    }));
+    const [intersectionData, setIntersectionData] = useState<IntersectionData[]>(initialIntersectionData);
 
     useEffect(() => {
-        // Initialize intersectionData when refs change
-        const initialIntersectionData: IntersectionData[] = refs.map((ref, index) => ({
-            ref,
-            index,
-            inView: false,
-            ratio: 0,
-            shown: false
-        }));
-        setIntersectionData(initialIntersectionData);
+        let thresholdArr: number[]= [];
+        for (let i = 0; i < 100; i++) {
+            thresholdArr.push(Number(`0.${i}`))
+        }
+        let options: IntersectionObserverInit = {
+            // threshold: [0.4]
+            threshold: thresholdArr
+        }
 
         const observer = new IntersectionObserver(entries => {
             setIntersectionData(prev => {
@@ -35,7 +44,7 @@ export function useIntersectionObserverAll(refs: RefObject<Element>[]): Intersec
                     };
                 });
             });
-        });
+        }, options);
 
         refs.forEach(ref => {
             if (ref.current) {

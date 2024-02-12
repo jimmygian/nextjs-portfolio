@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState, useRef, RefObject } from "react";
 
 interface IntersectionData {
@@ -17,6 +19,14 @@ export function useIntersectionObserver(ref: RefObject<Element>): IntersectionDa
     });
 
     useEffect(() => {
+        let thresholdArr: number[]= [];
+        for (let i = 0; i < 100; i++) {
+            thresholdArr.push(Number(`0.${i}`))
+        }
+        let options: IntersectionObserverInit = {
+            // threshold: [0.4]
+            threshold: thresholdArr
+        }
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
             setIntersectionData(prev => ({
@@ -26,7 +36,7 @@ export function useIntersectionObserver(ref: RefObject<Element>): IntersectionDa
                 ratio: entry.intersectionRatio,
                 shown: (entry.isIntersecting) ? true : prev.inView,
             }));
-        });
+        }, options);
 
         if (ref.current) {
             observer.observe(ref.current);
