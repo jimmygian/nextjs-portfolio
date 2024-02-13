@@ -30,10 +30,17 @@ export default function ProjectCard(props: ProjectProps) {
   const ratio = useRef<Number | null>(null);
   ratio.current = Number((articleInData.ratio).toFixed(2));
 
-  console.log(ratio.current)
-
   const myStyles: CSSProperties = {
-    opacity: `${ratio.current}`
+    "opacity": `${ratio.current}`,
+  }
+
+  if (articleInData.shown && Number(ratio.current) < 0.5) {
+    myStyles["opacity"] = `${Number(ratio.current)*2}`;
+    myStyles["transform"] = `translateY(${Number(ratio.current)*3}rem)`;
+
+  } else {
+    myStyles["opacity"] = `100`;
+    myStyles["transform"] = `translateY(${0.5*3}rem)`;
   }
 
   return (
@@ -42,6 +49,7 @@ export default function ProjectCard(props: ProjectProps) {
       tabIndex={0}
       style={myStyles}
       className={`${project.project} 
+        ${/*articleInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck} scale-[${ratio.current}]` : "opacity-0" */ ""} 
         group 
         relative
         bg-gray-100 
