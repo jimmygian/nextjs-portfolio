@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import animate from "@app/components/css/animations.module.css";
 

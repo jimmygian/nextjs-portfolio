@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -7,7 +9,9 @@ import animate from "@app/components/css/animations.module.css";
 
 export default function Intro() {
   return (
-    <section className="mt-[4.3rem] sm:mt-[2rem] h-[83vh] sm:h-[40vh]">
+    <section 
+      id="home"
+      className="mt-[4.3rem] sm:mt-[2rem] h-[83vh] sm:h-[40vh] scroll-mt-[100rem]">
       {/* Image */}
       <div
         className={`${animate.animate} ${animate.zoomIn} ${animate.anmDur04} flex items-center justify-center`}

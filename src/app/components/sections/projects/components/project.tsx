@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useRef, useEffect, useState, CSSProperties } from "react";
 import { projectsData } from "@lib/data";
