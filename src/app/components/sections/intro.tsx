@@ -2,14 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import animate from "@app/components/css/animations.module.css";
+import { useSectionInView } from "@lib/hooks";
 
 export default function Intro() {
+  const { sectionRef } = useSectionInView("Home", [0.75]);
+
   return (
     <section 
+      ref={sectionRef}
       id="home"
       className="mt-[4.3rem] sm:mt-[2rem] h-[83vh] sm:h-[40vh] scroll-mt-[100rem]">
       {/* Image */}

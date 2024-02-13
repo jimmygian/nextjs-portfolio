@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState, CSSProperties } from "react";
+import React, { useRef, CSSProperties } from "react";
 import { projectsData } from "@lib/data";
 import Image from "next/image";
 import project from "../projects.module.css";

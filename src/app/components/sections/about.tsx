@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
-import SectionHeader from "@/app/components/sections/section-header";
+import React, { useRef, useEffect } from "react";
+import SectionHeader from "@app/components/sections/section-header";
 import animate from "@app/components/css/animations.module.css";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
+  const { sectionRef } = useSectionInView("About", [0.75]);
+
   return (
     <section 
+      ref={sectionRef}
       id="about"
       className={`
       ${animate.animate} ${animate.up} ${animate.anmDur04} ${animate.anmDel05} ${animate.anmFillBck} 

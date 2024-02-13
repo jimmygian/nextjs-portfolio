@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef, RefObject } from "react";
+import type { ThresholdValue } from "@lib/types";
 
 interface IntersectionData {
     ref: RefObject<Element>;
@@ -8,9 +9,19 @@ interface IntersectionData {
     entry?: IntersectionObserverEntry;
     ratio: number;
     shown:boolean;
+    height?: number;
 }
 
-export function useIntersectionObserver(ref: RefObject<Element>): IntersectionData {
+
+
+
+const thresArr: ThresholdValue[] = [];
+for (let i = 0; i < 100; i++) {
+    thresArr.push(Number(`0.${i}`) as ThresholdValue)
+}
+
+
+export function useIntersectionObserver(ref: RefObject<Element>, thresholdArr: ThresholdValue[] = thresArr): IntersectionData {
     const [intersectionData, setIntersectionData] = useState<IntersectionData>({
         ref,
         inView: false,
@@ -19,10 +30,7 @@ export function useIntersectionObserver(ref: RefObject<Element>): IntersectionDa
     });
 
     useEffect(() => {
-        let thresholdArr: number[]= [];
-        for (let i = 0; i < 100; i++) {
-            thresholdArr.push(Number(`0.${i}`))
-        }
+
         let options: IntersectionObserverInit = {
             // threshold: [0.4]
             threshold: thresholdArr

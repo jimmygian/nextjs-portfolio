@@ -8,7 +8,7 @@ import animate from "@app/components/css/animations.module.css";
 import { useActiveSectionContext } from "@/app/context/active-section-context";
 
 export default function Header() {
-  const {activeSection, setActiveSection} = useActiveSectionContext()
+  const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionContext()
 
   return (
     <header
@@ -24,7 +24,10 @@ export default function Header() {
               key={link.hash}
             >
               <Link
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name)
+                  setTimeOfLastClick(Date.now())
+                }}
                 className={`
                   relative flex w-full items-center justify-center px-3 py-2 mb-4 hover:text-gray-950 transition 
                   ${activeSection === link.name && `text-gray-950`}`
