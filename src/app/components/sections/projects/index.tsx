@@ -10,7 +10,7 @@ export default function Projects() {
   const { sectionRef } = useSectionInView("Projects", [0.2]);
 
   return (
-    <section ref={sectionRef} id='projects' className='text-center scroll-mt-28'>
+    <section ref={sectionRef} id='projects' className='text-center scroll-mt-28 mb-28 sm:mb-40'>
       <SectionHeader>My projects</SectionHeader>
       <div>
         {

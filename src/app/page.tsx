@@ -3,6 +3,7 @@ import SectionDivider from "@app/components/sections/section-divider"
 import About from "@app/components/sections/about"
 import Projects from "@app/components/sections/projects"
 import { Component } from "react"
+import Skills from "@app/components/sections/skills"
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
     <SectionDivider />
     <About />
     <Projects />
+    <Skills />
     </main>
   )
 }
