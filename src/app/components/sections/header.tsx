@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useContext } from "react";
+import React from "react";
 // import { motion } from 'framer-motion'
 import { links } from "@lib/data";
 import Link from "next/link";
 import animate from "@app/components/css/animations.module.css";
-import { useActiveSectionContext } from "@/app/context/active-section-context";
+import { useActiveSectionContext } from "@app/context/active-section-context";
 
 export default function Header() {
   const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionContext()

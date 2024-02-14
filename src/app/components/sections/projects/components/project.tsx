@@ -4,8 +4,7 @@ import React, { useRef, CSSProperties } from "react";
 import { projectsData } from "@lib/data";
 import Image from "next/image";
 import project from "../projects.module.css";
-import { useIntersectionObserver } from "@/lib/useInObserver";
-import { useIntersectionObserverAll } from "@/lib/useInObserverAll";
+import { useIntersectionObserver } from "@/lib/hooks";
 import animate from '@app/components/css/animations.module.css';
 
 type ProjectProps = (typeof projectsData)[number];

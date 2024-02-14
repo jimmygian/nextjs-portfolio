@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import animate from "@app/components/css/animations.module.css";

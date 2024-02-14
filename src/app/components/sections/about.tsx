@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import SectionHeader from "@app/components/sections/section-header";
 import animate from "@app/components/css/animations.module.css";
 import { useSectionInView } from "@/lib/hooks";
