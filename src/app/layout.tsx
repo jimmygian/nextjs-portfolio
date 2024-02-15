@@ -6,7 +6,7 @@ import AvtiveSectionContextProvider from '@app/context/active-section-context'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Dimitris G. | Web-Dev Portfolio',
+  title: 'xxx',
   description: 'Dimitris is a full-stack web developer with design and marketing experience.',
 }
 

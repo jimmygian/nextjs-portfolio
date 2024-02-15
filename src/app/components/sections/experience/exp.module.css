@@ -1,0 +1,37 @@
+.line {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 0.4rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10%;;
+    height: 100vh;   
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.container {
+    /* border: 1px solid black; */
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.textBox {
+    position: relative;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    font-size: 15px;
+}
+.leftContainer {
+ left: 50%;
+}
+.rightContainer {
+    left: 0;
+}
