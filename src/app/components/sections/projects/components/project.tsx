@@ -52,8 +52,7 @@ export default function ProjectCard(props: ProjectProps) {
         group 
         relative
         bg-gray-100 
-        border 
-        border-black/2 
+
         m-6 
         max-w-[42rem] 
         overflow-hidden 

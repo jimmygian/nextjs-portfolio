@@ -1,31 +1,40 @@
+/* LINE (Absolute) */
+
 .line {
   position: absolute;
+  top: 0;
+  left: 49.5%;
   background-color: rgb(255, 255, 255);
-  width: 0.4rem;
+  width: 0.6rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10%;
-  height: 100vh;
+  border-radius: 10px 10px;
+  z-index: 10;
 }
+
+/* EXP CARD */
+
+/* Main Container */
 
 .timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 100px auto;
+  position: flex;
+  min-width: 23rem;
+  max-width: 52rem;
+  margin: 1rem;
 }
-
 .container {
-  /* border: 1px solid black; */
-  padding: 10px 50px;
+  padding: 0.4rem 2.7rem 0.4rem 0.4rem;
+  margin-bottom: 2.5rem;
   position: relative;
   width: 50%;
-  background: rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+}
+.leftContainer.container {
+  padding: 0.4rem 0.4rem 0.4rem 2.7rem;
 }
 
 .textBox {
   position: relative;
   padding: 20px 30px;
-  background-color: #fff;
+  background-color: #f5f5f5;
   border-radius: 15px;
   font-size: 15px;
 }

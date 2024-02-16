@@ -1,8 +1,10 @@
 import { links } from "@/lib/data";
 import type { RefObject } from "react";
+import { experiencesData } from "@lib/data";
 
 
 export type SectionName = (typeof links)[number][`name`];
+export type expDataObj = (typeof experiencesData)[number];
 
 export interface IntersectionData {
     ref: RefObject<Element>;
