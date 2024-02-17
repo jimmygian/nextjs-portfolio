@@ -1,9 +1,10 @@
 .timeline {
-  --bg-expCard: rgb(231, 231, 231);
+  --bg-expCard: rgb(247, 247, 247);
   --bg-expCard-hover: rgb(236, 236, 236);
   --bg-icon: rgb(255, 255, 255);
   --bg-line: rgb(177, 177, 177);
   --bg-border: rgba(0, 0, 0, 0.0);
+  --color-date: rgb(100, 100, 100);
 }
 
 
@@ -79,7 +80,7 @@
   position: relative;
   padding: clamp(10px, 10%, 40px) clamp(2.7rem, 5%, 40px) clamp(10px, 10%, 40px) clamp(5px, 5%, 40px);
   background-color: var(--bg-expCard);
-  border-radius: 15px;
+  border-radius: 3px;
   font-size: clamp(1rem, 1.8vw, 1.15rem);
   width: 100%;
   transition: width 0.7s;
@@ -116,6 +117,23 @@
 }
 
 
+/* DATE */
+.dateDivLeft {
+  position: absolute;
+  left: 50%;
+  font-size: small;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  color: var(--color-date);
+}
+.dateDivRight {
+  position: absolute;
+  right: 50%;
+  font-size: small;
+  padding-top: 2rem;
+  padding-right: 2rem;
+  color: var(--color-date);
+}
 
 
 

@@ -52,7 +52,7 @@ export default function ExpCard({ side, data }: extCardProps) {
 
         <article className={`${exp.textBox}`}>
           <h2 className="text-lg sm:text-xl">{data.title}</h2>
-          <small className="block mt-1 mb-3">{data.date}</small>
+          <small className="block mt-1 mb-3">{data.location}</small>
           <p className="hidden sm:block">
             {data.description}
           </p>
@@ -62,6 +62,18 @@ export default function ExpCard({ side, data }: extCardProps) {
 
       {/* Line */}
       <div className={`${exp.line}`}></div>
+    
+      {/* DATE */}
+      <div 
+      className={
+        `${side === "left" ? exp.dateDivLeft : exp.dateDivRight}
+        ${shown && side === "left" ? exp.appearRight : "opacity-0"}
+        ${shown && side === "right" ? exp.appearLeft : "opacity-0"}`
+      }
+        
+        >{data.date}</div>
     </div>
+
+    
   );
 }
