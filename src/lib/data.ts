@@ -39,6 +39,7 @@ export const links = [
 
 export const experiencesData = [
   {
+    id: "exp1",
     title: "Graduated bootcamp",
     location: "Miami, FL",
     description:
@@ -47,6 +48,7 @@ export const experiencesData = [
     date: "2019",
   },
   {
+    id: "exp2",
     title: "Front-End Developer",
     location: "Orlando, FL",
     description:
@@ -55,6 +57,7 @@ export const experiencesData = [
     date: "2019 - 2021",
   },
   {
+    id: "exp3",
     title: "Full-Stack Developer",
     location: "Houston, TX",
     description:

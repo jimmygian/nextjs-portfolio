@@ -11,6 +11,8 @@ type contextProviderProps = {
 type ExpCardContextType = {
     isHidden: boolean;
     setIsHidden: React.Dispatch<React.SetStateAction<boolean>>;
+    expandedContainer: string;
+    setExpandedContainer: React.Dispatch<React.SetStateAction<string>>;
 }
 
 
@@ -20,16 +22,19 @@ type ExpCardContextType = {
 const ExpCardContext = 
     createContext<ExpCardContextType | null>(null);
 
-export default function ExpCardDialogContextProvider({
+export function ExperenceContextProvider({
     children
 }: contextProviderProps) {
     const [isHidden, setIsHidden] = useState<boolean>(true);
+    const [expandedContainer, setExpandedContainer] = useState('')
     
     return (
         <ExpCardContext.Provider
             value={{
                 isHidden,
                 setIsHidden,
+                expandedContainer,
+                setExpandedContainer
             }}
         >
             {children}

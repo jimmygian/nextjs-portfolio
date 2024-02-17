@@ -1,56 +1,90 @@
+.timeline {
+  --bg-expCard: rgb(231, 231, 231);
+  --bg-expCard-hover: rgb(236, 236, 236);
+  --bg-icon: rgb(255, 255, 255);
+  --bg-line: rgb(177, 177, 177);
+  --bg-border: rgba(0, 0, 0, 0.0);
+}
+
+
+
 /* LINE (Absolute) */
 
 .line {
   position: absolute;
   top: 0;
-  left: 49.5%;
-  background-color: rgb(177, 177, 177);
+  left: 49.75%;
+  background-color: var(--bg-line);
   width: 0.3rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 100%;
+  border: 1px solid var(--bg-border);
   border-radius: 10px 10px;
-  z-index: 10;
+  z-index: -1;
+  transition: height 0.7s;
 }
 
-/* EXP CARD */
-
-/* Main Container */
+/* The whole timeline */
 
 .timeline {
   position: flex;
   justify-self: center;
   align-self: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   position: relative;
-  width: 94vw;
+  width: 92vw;
   max-width:  62rem;
   margin: clamp(0.5rem, 1vh, 1rem);
 }
+
+
+/* EXP CARD */
+
+/* Wrapper */
+.expCardWrapper {
+  display: relative;
+  display: flex;
+  justify-content: center;
+
+}
+
+/* Container */
 .container {
-  padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+  padding: 0.4rem max(0.4rem, 6%);
   margin-bottom: 2.5rem;
   position: relative;
   width: 50%;
-}
-
-.rightContainer.container {
-  padding: 0.4rem 0.4rem 0.4rem 0.8rem;
-}
-.rightContainer {
-  text-align: start;
-  left: 50%;
+  transition: transform 0.3s;
 }
 .leftContainer {
   text-align: end;
-  left: 0;
+  left: -25%;
+  right: initial;
+  transition: left 0.4s;
+}
+.rightContainer {
+  text-align: start;
+  left: initial;
+  right: -25%;
+  transition: right 0.4s;
+}
+.leftContainer.container {
+  padding-right: 0.8rem;
+}
+.rightContainer.container {
+  padding-left: 0.8rem;
 }
 
+/* Container's text Box */
 .textBox {
   position: relative;
-  
   padding: clamp(10px, 10%, 40px) clamp(2.7rem, 5%, 40px) clamp(10px, 10%, 40px) clamp(5px, 5%, 40px);
-  background-color: #f5f5f5;
+  background-color: var(--bg-expCard);
   border-radius: 15px;
   font-size: clamp(1rem, 1.8vw, 1.15rem);
+  width: 100%;
+  transition: width 0.7s;
+  transition: height 0.7s;
+  transition: background-color 0.7s;
 }
 .textBox h2 {
   font-weight: 500;
@@ -61,8 +95,7 @@
 }
 
 
-/* ICON */
-
+/* Icon div */
 .iconContainer {
   position: absolute;
   top: 1rem;
@@ -70,7 +103,7 @@
   width: 3rem;
   height: 3rem;
   z-index: 10;
-  background-color: white;
+  background-color: var(--bg-icon);
   border-radius: 50%;
 }
 .icon {
@@ -81,3 +114,123 @@
   left: initial;
   right: -1.5rem;
 }
+
+
+
+
+
+.container:active,
+.container:focus {
+  inset: 0;
+  width: 80vw;
+  text-align: start;
+  z-index: 80;
+}
+
+.container:active p,
+.container:focus p {
+  display: block;
+}
+
+
+
+
+
+@keyframes expand {
+  0% {
+    width: 50%;
+  }
+
+  100% {
+    width: 90%;
+    inset: 0;
+    text-align: start;
+  }
+}
+
+
+@keyframes shrink {
+  0% {
+    width: 90%;
+    inset: 0;
+  }
+
+  100% {
+    width: 49.5%;
+  }
+}
+
+
+@keyframes appearLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes appearRight {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.expand {
+  animation: expand .2s ease-in;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  transform-origin: top left;
+  content: "";
+  z-index: 80;    
+}
+.shrink {
+  animation: shrink .2s ease-in;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  content: "";
+  z-index: 80;    
+}
+
+.appearLeft {
+  animation: appearLeft 0.7s cubic-bezier(0,.99,.39,.96);
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  content: "";
+}
+.appearRight {
+  animation: appearRight 0.7s cubic-bezier(0,.99,.39,.96);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  content: "";
+}
+
+
+.textBox:hover {
+  transform: scale(1.01);
+  background-color: var(--bg-expCard-hover);
+  cursor: pointer;
+}
+
+.container:focus {
+  outline: none;
+}
+.contaienr:focus.textBox {
+  background-color: var(--bg-expCard-hover);
+}
+
+
+.expand > .textBox {
+  transition: height 0.7s !important;
+  min-height: 25vh;
+}
+
+
