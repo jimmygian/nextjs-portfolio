@@ -17,34 +17,49 @@
 
 .timeline {
   position: flex;
+  justify-self: center;
+  align-self: center;
+  margin: 0 auto;
   position: relative;
-  min-width: 23rem;
-  max-width: 52rem;
-  margin: 1rem;
+  width: 94vw;
+  max-width:  62rem;
+  margin: clamp(0.5rem, 1vh, 1rem);
 }
 .container {
-  padding: 0.4rem 2.7rem 0.4rem 0.4rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.4rem;
   margin-bottom: 2.5rem;
   position: relative;
   width: 50%;
 }
-.leftContainer.container {
-  padding: 0.4rem 0.4rem 0.4rem 2.7rem;
+
+.rightContainer.container {
+  padding: 0.4rem 0.4rem 0.4rem 0.8rem;
+}
+.rightContainer {
+  text-align: start;
+  left: 50%;
+}
+.leftContainer {
+  text-align: end;
+  left: 0;
 }
 
 .textBox {
   position: relative;
-  padding: 20px 30px;
+  
+  padding: clamp(10px, 10%, 40px) clamp(2.7rem, 5%, 40px) clamp(10px, 10%, 40px) clamp(5px, 5%, 40px);
   background-color: #f5f5f5;
   border-radius: 15px;
-  font-size: 15px;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
 }
-.leftContainer {
-  left: 50%;
+.textBox h2 {
+  font-weight: 500;
+  font-size: larger;
 }
-.rightContainer {
-  left: 0;
+.rightContainer > .textBox {
+  padding: clamp(10px, 10%, 40px) clamp(5px, 5%, 40px) clamp(10px, 10%, 40px) clamp(2.7rem, 5%, 40px);
 }
+
 
 /* ICON */
 
@@ -62,7 +77,7 @@
   padding: 0.5rem;
 }
 
-.rightContainer > .iconContainer {
+.leftContainer > .iconContainer {
   left: initial;
   right: -1.5rem;
 }
