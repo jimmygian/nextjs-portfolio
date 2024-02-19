@@ -10,6 +10,30 @@ import project3_pic_nextJSP from "@public/project-nextjsPtf.png";
 import project4_pic_AudioOp from "@public/project-AudioOp.png";
 import project5_pic_WebmC from "@public/project-WebMConv.png";
 
+
+export const personalInfo = {
+  name: "Dimitris",
+  surname: "Giannoulis",
+  get fullname(): string {
+    return `${this.name} ${this.surname}`
+  },
+
+  city: "London",
+  country: "UK",
+  get location(): string {
+    return `${this.city} ${this.country}`
+  },
+
+  dob: new Date("13 April 1992"),
+  
+  email: "dimitrisgiannolis.jg@gmail.com",
+  phone: "+44 7868 055029",
+  socialLinks: [
+    {platform: "LinkedIn", url: "https://linkedin.com/in/jimmygian", icon: ""},
+    {platform: "Website", url: "https://jimmygian.com", icon: ""}
+  ]
+} as const;
+
 export const links = [
   {
     name: "Home",
@@ -40,32 +64,33 @@ export const links = [
 export const experiencesData = [
   {
     id: "exp1",
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Front-End Bootcamp Graduate",
+    location: "Birmingham University / EdX",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I graduated with practical skills ready to embark on a career as a front-end developer.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2024",
   },
   {
     id: "exp2",
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Harvard CS50P Certificate",
+    location: "Online",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "I earned my certificate in Harvard's CS50P course, a rigorous program focusing in building strong foundation in Python and Computer Science.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2023",
   },
   {
     id: "exp3",
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Harvard CS50 Certificate",
+    location: "Online",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "I completed the renowned Harvard CS50 course, a comprehensive introduction to computer science, algorithms, and web development.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2023",
   },
 ] as const;
+
 
 export const projectsData = [
   {

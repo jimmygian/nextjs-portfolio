@@ -1,10 +1,12 @@
 import { links } from "@/lib/data";
 import type { RefObject } from "react";
 import { experiencesData } from "@lib/data";
+import { personalInfo } from "@lib/data";
 
 
 export type SectionName = (typeof links)[number][`name`];
 export type expDataObj = (typeof experiencesData)[number];
+export type PersonalInfoExact = (typeof personalInfo);
 
 export interface IntersectionData {
     ref: RefObject<Element>;
@@ -15,6 +17,26 @@ export interface IntersectionData {
     height?: number;
   }  
 
+// interface socialLink {
+//     platform: string;
+//     url: string;
+//     icon: string;
+//   }
+  
+// export interface PersonalInfoType {
+//     name: string;
+//     surname: string;
+//     city: string;
+//     country: string;
+//     get fullname(): string;
+//     get location(): string;
+//     dob: Date;
+//     email: string;
+//     phone: string;
+//     socialLinks: socialLink[];
+//   }
+
+  
 export type ThresholdValue =
   | 0
   | 0.1

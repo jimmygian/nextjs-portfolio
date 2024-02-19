@@ -49,6 +49,12 @@
 }
 
 /* DELAYS */
+.animate.anmDel01 {
+  animation-delay: 0.1s !important;
+}
+.animate.anmDel02 {
+  animation-delay: 0.2s !important;
+}
 .animate.anmDel03 {
   animation-delay: 0.3s !important;
 }

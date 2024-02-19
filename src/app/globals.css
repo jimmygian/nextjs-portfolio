@@ -5,3 +5,11 @@
 html {
     scroll-behavior: smooth !important;
 }
+
+.borderBlack {
+    @apply border border-black/10;
+}
+
+.sectionBasicStyle {
+    @apply text-center scroll-mt-28 mb-28 sm:mb-40;
+}

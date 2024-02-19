@@ -6,7 +6,10 @@ import animate from "@app/components/css/animations.module.css";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  const { sectionRef } = useSectionInView("About", [0.75]);
+  const { sectionRef } = useSectionInView("About");
+
+
+  console.log("about")
 
   return (
     <section 
@@ -14,7 +17,7 @@ export default function About() {
       id="about"
       className={`
       ${animate.animate} ${animate.up} ${animate.anmDur04} ${animate.anmDel05} ${animate.anmFillBck} 
-      scroll-mt-28 mb-28 mx-10 max-w-[45rem] text-center leading-8 sm:mb-40`}
+      sectionBasicStyle mx-10 max-w-[45rem] leading-8`}
     >
       <SectionHeader>About me</SectionHeader>
       <p className="mb-3">

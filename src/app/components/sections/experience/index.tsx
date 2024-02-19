@@ -10,15 +10,13 @@ import { ExperenceContextProvider } from "@app/context/dialog-context";
 
 export default function Experience() {
   const {sectionRef} = useSectionInView("Experience")
+  console.log("experience")
 
   const expCount = experiencesData.length;
   return (
-    <section ref={sectionRef} id="experience" className="mb-28 scroll-mt-28 sm:mb-40 text-center flex flex-col justify-center">
+    <section ref={sectionRef} id="experience" className="sectionBasicStyle flex flex-col justify-center">
       <SectionHeader>Experience</SectionHeader>
       <div className={`${exp.timeline}`}>
-        
-        {/* Line */}
-        {/* <div className={`${exp.line}`} style={{height: `${(12 * expCount)}rem`}}></div> */}
 
         <ExperenceContextProvider>
           {/* EXPERIENCE Cards Mapping */}

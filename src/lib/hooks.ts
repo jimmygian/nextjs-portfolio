@@ -25,8 +25,7 @@ export function useIntersectionObserver(ref: RefObject<Element>, thresholdArr: T
     useEffect(() => {
 
         let options: IntersectionObserverInit = {
-            // threshold: [0.4]
-            threshold: thresholdArr
+            threshold: thresholdArr,
         }
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
