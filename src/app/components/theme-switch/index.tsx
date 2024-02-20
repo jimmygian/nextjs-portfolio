@@ -2,12 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { Bs0Circle, BsMoon, BsSun, BsThermometer } from "react-icons/bs";
+import { Theme } from '@lib/types'
+import { useGlobalContext } from "@/app/context/global-context";
 
 
-type Theme = "light" | "dark" | "none";
 
 export default function ThemeSwitch() {
-  const [theme, setTheme] = useState<Theme>("none");
+  const {theme, setTheme} = useGlobalContext();
 
   console.log(theme)
   const toggleTheme = () => {
@@ -25,28 +26,9 @@ export default function ThemeSwitch() {
     }
   }
 
-  useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
-
-    if (localTheme) {
-      setTheme(localTheme);
-      
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.add("light");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      document.documentElement.classList.add("light");
-    }
-  }, [])
-
   return (
     <button
+      aria-label="toggle theme mode"
       onClick={toggleTheme}
       className="
         fixed 

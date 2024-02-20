@@ -5,10 +5,10 @@ import React from "react";
 import { links } from "@lib/data";
 import Link from "next/link";
 import animate from "@app/components/css/animations.module.css";
-import { useActiveSectionContext } from "@app/context/active-section-context";
+import { useGlobalContext } from "@/app/context/global-context";
 
 export default function Header() {
-  const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionContext()
+  const {activeSection, setActiveSection, setTimeOfLastClick} = useGlobalContext()
 
   return (
     <header

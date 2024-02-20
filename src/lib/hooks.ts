@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useActiveSectionContext } from "@app/context/active-section-context";
+import { useGlobalContext } from "@/app/context/global-context";
 
 import type { RefObject } from "react";
 import type { SectionName, ThresholdValue, IntersectionData } from "@lib/types";
@@ -66,7 +66,7 @@ export function useSectionInView(sectionName: SectionName, threshold: ThresholdV
   const { inView } = useIntersectionObserver(sectionRef, threshold);
   
   // Imports "global" states from context 
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
+  const { setActiveSection, timeOfLastClick } = useGlobalContext();
 
   // Sets activeSection state to "sectionName" if section is in-view + no header button was clicked
   useEffect(() => {

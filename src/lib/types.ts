@@ -7,6 +7,7 @@ import { personalInfo } from "@lib/data";
 export type SectionName = (typeof links)[number][`name`];
 export type expDataObj = (typeof experiencesData)[number];
 export type PersonalInfoExact = (typeof personalInfo);
+export type Theme = "light" | "dark" | "none";
 
 export interface IntersectionData {
     ref: RefObject<Element>;

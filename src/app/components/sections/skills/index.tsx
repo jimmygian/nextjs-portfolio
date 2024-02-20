@@ -9,7 +9,25 @@ export default function Skills() {
     const {sectionRef} = useSectionInView("Skills", [0.5])
 
     const skillEls = skillsData.map((skill, index) => (
-        <li key={index} className='bg-white border border-black/[0.1] rounded-md p-1 ps-3 pe-3 hover:scale-[1.05] transition'>{skill}</li>
+        <li 
+          key={index} 
+          className='
+            font-thin
+            bg-white 
+            border 
+            border-black/[0.1] 
+            rounded-md 
+            p-1 
+            ps-3 
+            pe-3 
+            hover:scale-[1.05] 
+            transition 
+            dark:bg-white/10
+            dark:text-white/80
+          '
+        >
+          {skill}
+        </li>
     ))
 
     console.log("skills")

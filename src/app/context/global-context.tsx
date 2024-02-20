@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
-import type { SectionName } from "@lib/types";
+import React, { useState, createContext, useContext, useEffect } from "react";
+import type { SectionName, Theme } from "@lib/types";
+
 
 type ActiveSectionContextProviderProps = { children: React.ReactNode };
 type ActiveSectionContextType = {
@@ -9,6 +10,8 @@ type ActiveSectionContextType = {
   setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
   timeOfLastClick: number;
   setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
+  theme: Theme;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
 };
 
 const ActiveSectionContext =
@@ -19,6 +22,28 @@ export default function ActiveSectionContextProvider({
 }: ActiveSectionContextProviderProps) {
   const [activeSection, setActiveSection] = useState<SectionName>("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
+  const [theme, setTheme] = useState<Theme>("none");
+
+
+  useEffect(() => {
+    const localTheme = window.localStorage.getItem("theme") as Theme | null;
+
+    if (localTheme) {
+      setTheme(localTheme);
+      
+      if (localTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.add("light");
+      }
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      setTheme("light");
+      document.documentElement.classList.add("light");
+    }
+  }, [])
 
   return (
     <ActiveSectionContext.Provider
@@ -27,6 +52,8 @@ export default function ActiveSectionContextProvider({
         setActiveSection,
         timeOfLastClick,
         setTimeOfLastClick,
+        theme,
+        setTheme,
       }}
     >
       {children}
@@ -34,12 +61,12 @@ export default function ActiveSectionContextProvider({
   );
 }
 
-export function useActiveSectionContext() {
+export function useGlobalContext() {
   const context = useContext(ActiveSectionContext);
 
   if (context === null) {
     throw new Error(
-      "useActiveSectionContext must be used within an ActiveSectionContextProvider"
+      "useGlobalContext must be used within an ActiveSectionContextProvider"
     );
   }
 

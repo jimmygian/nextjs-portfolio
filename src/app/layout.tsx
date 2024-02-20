@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Header from '@app/components/sections/header'
-import AvtiveSectionContextProvider from '@app/context/active-section-context'
+import AvtiveSectionContextProvider from '@/app/context/global-context'
 import { Toaster } from 'react-hot-toast'
 import Footer from '@app/components/footer'
 import ThemeSwitch from '@app/components/theme-switch'
@@ -72,8 +72,8 @@ export default function RootLayout({
           {children}
           <Footer />
           <Toaster position="top-right"/>
+          <ThemeSwitch />
         </AvtiveSectionContextProvider>
-        <ThemeSwitch />
       </body>
     </html>
   )

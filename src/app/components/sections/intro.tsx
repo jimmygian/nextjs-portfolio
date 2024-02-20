@@ -7,12 +7,12 @@ import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import animate from "@app/components/css/animations.module.css";
 import { personalInfo } from "@lib/data";
-import { useActiveSectionContext } from "@app/context/active-section-context";
+import { useGlobalContext } from "@/app/context/global-context";
 import { useSectionInView } from "@lib/hooks";
 
 export default function Intro() {
   const { sectionRef } = useSectionInView("Home", [0.75]);
-  const { activeSection, setActiveSection, timeOfLastClick, setTimeOfLastClick } = useActiveSectionContext();
+  const { activeSection, setActiveSection, timeOfLastClick, setTimeOfLastClick } = useGlobalContext();
 
   console.log("home")
 
