@@ -4,14 +4,21 @@ import React, { useRef } from 'react';
 import SectionHeader from '@app/components/sections/section-header';
 import { useIntersectionObserver, useSectionInView } from '@lib/hooks';
 import { personalInfo } from '@lib/data';
-import { FaPaperPlane } from 'react-icons/fa';
 import animate from '@app/components/css/animations.module.css'
+import { sendEmail } from '@/actions/sendEmail';
+import { useFormStatus } from 'react-dom';
+import SubmitBtn from './components/submit-btn';
+import toast from 'react-hot-toast';
+
+
 
 export default function Contact() {
     const {sectionRef} = useSectionInView("Contact", [0.1, 0.4]);
 
     const formRef = useRef(null);
     const {inView} = useIntersectionObserver(formRef)
+
+    
 
     console.log("contact")
 
@@ -20,47 +27,43 @@ export default function Contact() {
         <SectionHeader>Contact me</SectionHeader>
         <p className='text-xs text-gray-800 -mt-[1.5rem] px-[2rem]'>Please contact me directly at <a href={`mailto:${personalInfo.email}`} className='underline'>{personalInfo.email}</a> or through this form.</p>
 
-        <form ref={formRef} action="" className={`${inView ? `${animate.animate} ${animate.down} ${animate.anmFillBoth} ${animate.anmDel01} ${animate.anmDur02}` : "opacity-0"}  mt-10 flex flex-col`}>
+        <form 
+          ref={formRef} 
+          action={ async (formData) => { 
+            const { data, error } = await sendEmail(formData);
+
+            if (error) {
+              toast.error(error);
+              return;
+            }
+            return toast.success("Email sent successfully!");
+          }} 
+          className={`${inView ? `${animate.animate} ${animate.down} ${animate.anmFillBoth} ${animate.anmDel01} ${animate.anmDur02}` : "opacity-0"}  mt-10 flex flex-col`}>
 
           <label className='text-start text-sm pt-3' htmlFor="email">Email:</label>
-          <input id="email" className='h-14 rounded-lg borderBlack px-4' type="email" placeholder='Your email'/>
+          <input 
+            id="email" 
+            className='h-14 rounded-lg borderBlack px-4' 
+            type="email" 
+            required 
+            maxLength={80} 
+            placeholder='Your email'
+            name={`senderEmail`}
+          />
 
           <label className='text-start text-sm pt-3' htmlFor="message">Message:</label>
-          <textarea className='borderBlack rounded-lg mb-3 px-4 pt-4' name="" id="message" cols={30} rows={10} placeholder='Your message'></textarea>
-
-          <button 
-            className='
-              group 
-              flex items-center gap-2 justify-center 
-              h-[3rem] w-[8rem] 
-              text-white bg-gray-900 
-              rounded-full 
-              outline-none 
-              px-4
-              hover:bg-gray-950
-              transition-all 
-              hover:scale-110
-              focus:scale-105
-              active:scale-105
-            ' 
-            type="submit"
+          <textarea 
+            className='borderBlack rounded-lg mb-3 px-4 pt-4' 
+            required 
+            maxLength={5000} 
+            name={`message`} 
+            id="message" 
+            cols={30} rows={10} 
+            placeholder='Your message'
           >
-          
-            Submit 
+          </textarea>
 
-            <FaPaperPlane 
-              className='
-                text-xs opacity-70 transition-all
-                group-hover:translate-x-1 
-                group-hover:-translate-y-1
-                focus:scale-105 
-                hover:scale-110 
-                active:scale-105
-                "
-              ' 
-            />
-          
-          </button>
+         <SubmitBtn />
         </form>
     </section>
   )
