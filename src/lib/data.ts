@@ -25,7 +25,7 @@ export const personalInfo = {
 
   dob: new Date("13 April 1992"),
 
-  email: "dimitrisgiannolis.jg@gmail.com",
+  email: "dimitrisgiannoulis.jg@gmail.com",
   phone: "+44 7868 055029",
   socialLinks: [
     {
