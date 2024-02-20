@@ -65,6 +65,7 @@ export default function ThemeSwitch() {
         hover:scale-[1.15]
         active:scale-105
         transition-all 
+        dark:bg-gray-950
       "
     >
       {

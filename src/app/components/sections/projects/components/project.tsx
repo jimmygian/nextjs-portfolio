@@ -71,6 +71,10 @@ export default function ProjectCard(props: ProjectProps) {
         focus:scale-[1.03]
         focus:bg-gray-200 
         cursor-pointer
+        dark:bg-white/10 
+        dark:hover:bg-white/20
+        dark:text-white
+        dark:focus:bg-gray-500
 
       `}
     >
@@ -102,7 +106,7 @@ export default function ProjectCard(props: ProjectProps) {
           ref={textRef}
           className={`
             ${"" /* textInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0" */}
-            mt-2 leading-relaxed text-gray-500`}
+            mt-2 leading-relaxed text-gray-500 dark:text-white/70`}
         >
           {description}
         </p>
@@ -116,7 +120,7 @@ export default function ProjectCard(props: ProjectProps) {
           {tags.map((tag, index) => (
             <li
               key={index}
-              className={`bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full`}
+              className={`bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70`}
             >
               {tag}
             </li>
@@ -165,7 +169,7 @@ export default function ProjectCard(props: ProjectProps) {
 
       {/* "Visit" Overlay */}
       <div
-        className={`${project.projectCta} absolute -bottom-[0rem] w-full h-[18rem] sm:h-[6rem] text-center sm:flex flex-col justify-end sm:opacity-0 sm:group-hover:opacity-100 transition`}
+        className={`${project.projectCta} absolute -bottom-[0rem] w-full h-[18rem] sm:h-[6rem] text-center sm:flex flex-col justify-end sm:opacity-0 sm:group-hover:opacity-100 transition dark:hidden`}
       >
         {/* <h4 className={`
           hidden

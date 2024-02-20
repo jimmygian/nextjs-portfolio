@@ -57,7 +57,7 @@ export default function Intro() {
         className={`${animate.animate} ${animate.up} ${animate.anmDur04} ${animate.anmDel04} ${animate.anmFillBck} flex items-center justify-center gap-3 mt-[1rem] flex-wrap`}
       >
         <Link
-          className="group bg-gray-900 text-white shadow-md shadow-[#ffffff] px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-110 active:scale-105 transition"
+          className="group bg-gray-900 text-white shadow-md shadow-black/10 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-110 active:scale-105 transition dark:shadow-black/10"
           href="#contact"
           onClick={() => {
             setActiveSection("Contact");
@@ -68,7 +68,7 @@ export default function Intro() {
           <BsArrowRight className="opacity-70 group-hover:translate-x-2 transition" />
         </Link>
         <a
-          className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full shadow-sm shadow-[#00000071] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition"
+          className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full shadow-sm shadow-[#00000071] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition dark:bg-white/10 dark:text-white/90 dark:shadow-md"
           href="/CV-ph.pdf"
           download={true}
         >
@@ -78,14 +78,14 @@ export default function Intro() {
         <a
           href="https://linkedin.com/jimmygian"
           target="_blank"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-[1.15] hover:scale-110 active:scale-[1.15] transition"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-[1.15] hover:scale-110 active:scale-[1.15] transition dark:bg-white/10 dark:text-white/60 dark:shadow-md"
         >
           <BsLinkedin />
         </a>
         <a
           href="https://github.com/jimmygian"
           target="_blank"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-[1.15] hover:scale-110 active:scale-[1.15] transition"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-[1.15] hover:scale-110 active:scale-[1.15] transition dark:bg-white/10 dark:text-white/60 dark:shadow-md"
         >
           <BsGithub />
         </a>
