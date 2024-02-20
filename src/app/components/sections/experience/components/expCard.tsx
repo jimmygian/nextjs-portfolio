@@ -7,7 +7,6 @@ import graduateIcon from "@public/icons/graduate-cap-svgrepo-com.svg";
 import type { expDataObj } from "@lib/types";
 import { useExpCardDialogContext } from "@/app/context/dialog-context";
 import { useIntersectionObserver } from "@/lib/hooks";
-import animate from "@app/components/css/animations.module.css";
 
 type extCardProps = {
   side: string;

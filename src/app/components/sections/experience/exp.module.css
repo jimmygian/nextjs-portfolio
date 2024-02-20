@@ -7,6 +7,15 @@
   --color-date: rgb(100, 100, 100);
 }
 
+.dark {
+  --bg-expCard: #1f2937;
+  --bg-expCard-hover: #1f2937;
+  --bg-icon: rgba(209, 213, 219, 0.8);
+  --bg-line: rgba(55, 65, 81, 0.075);
+  --bg-border: rgba(0, 0, 0, 0.0);
+  --color-date: rgb(148, 148, 148);
+}
+
 
 
 /* LINE (Absolute) */

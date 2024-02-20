@@ -7,16 +7,20 @@ import ExpCard from "./components/expCard";
 import { experiencesData } from "@lib/data";
 import { useSectionInView } from "@lib/hooks";
 import { ExperenceContextProvider } from "@app/context/dialog-context";
+import { useGlobalContext } from "@app/context/global-context";
 
 export default function Experience() {
+
+  const {theme} = useGlobalContext();
+
   const {sectionRef} = useSectionInView("Experience")
   console.log("experience")
 
   const expCount = experiencesData.length;
   return (
-    <section ref={sectionRef} id="experience" className="sectionBasicStyle flex flex-col justify-center">
+    <section ref={sectionRef} id="experience" className={`sectionBasicStyle flex flex-col justify-center`}>
       <SectionHeader>Experience</SectionHeader>
-      <div className={`${exp.timeline}`}>
+      <div className={`${exp.timeline}  ${theme === "dark" ? exp.dark : ""}`}>
 
         <ExperenceContextProvider>
           {/* EXPERIENCE Cards Mapping */}
