@@ -22,7 +22,7 @@ type ExpCardContextType = {
 const ExpCardContext = 
     createContext<ExpCardContextType | null>(null);
 
-export function ExperenceContextProvider({
+export function ExperienceContextProvider({
     children
 }: contextProviderProps) {
     const [isHidden, setIsHidden] = useState<boolean>(true);

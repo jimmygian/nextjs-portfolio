@@ -12,11 +12,15 @@ export default function SubmitBtn() {
       group 
       flex items-center gap-2 justify-center 
       h-[3rem] w-[8rem] 
-      text-white bg-gray-900 
+      text-white 
+      bg-zinc-800 
+      dark:bg-zinc-600
+      dark:hover:bg-zinc-500
+      
       rounded-full 
       outline-none 
       px-4
-      hover:bg-gray-950
+      hover:bg-zinc-950
       transition-all 
       hover:scale-110
       focus:scale-105

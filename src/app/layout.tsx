@@ -24,10 +24,10 @@ export default function RootLayout({
         className={`
           ${inter.className} 
           relative
-          bg-gray-80 
-          text-gray-950
-          dark:bg-gray-900
-          dark:text-gray-50
+          bg-zinc-80 
+          text-zinc-950
+          dark:bg-zinc-950
+          dark:text-zinc-50
           dark:text-opacity-90 
         `}>
 
@@ -44,7 +44,7 @@ export default function RootLayout({
             rounded-full 
             blur-[10rem] 
             sm:w-[68.75rem]
-            dark:bg-[#946263]
+            dark:bg-[rgba(82,55,56,0.4)]
           `}
         ></div>
         <div 
@@ -63,7 +63,7 @@ export default function RootLayout({
             lg:left-[-28rem] 
             xl:left-[-15rem] 
             2xl:left-[-5rem]
-            dark:bg-[#676394]
+            dark:bg-[rgba(56,55,73,0.4)]
           "
         ></div>
 

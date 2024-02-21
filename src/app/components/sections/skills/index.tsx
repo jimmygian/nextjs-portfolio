@@ -12,7 +12,7 @@ export default function Skills() {
         <li 
           key={index} 
           className='
-            font-thin
+            font-extralight
             bg-white 
             border 
             border-black/[0.1] 
@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <section id='skills' ref={sectionRef} className='sectionBasicStyle mx-10 max-w-[45rem] '>
         <SectionHeader>Skills</SectionHeader>
-        <ul className=' flex flex-wrap gap-2 justify-center text-lg text-gray-800'>{...skillEls}</ul>
+        <ul className=' flex flex-wrap gap-2 justify-center text-lg text-zinc-800'>{...skillEls}</ul>
     </section>
   )
 }

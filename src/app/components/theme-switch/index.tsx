@@ -36,18 +36,21 @@ export default function ThemeSwitch() {
         flex justify-center items-center
         w-[3rem] 
         h-[3rem] 
-        bg-white 
+        bg-zinc-50 
         bg-opacity-80 
         backdrop-blur[0.5rem] 
         border 
         border-white 
-        border-opacity-40 
+        border-opacity-70 
         shadow-2xl 
         rounded-full
         hover:scale-[1.15]
+        hover:bg-zinc-100
         active:scale-105
         transition-all 
-        dark:bg-gray-950
+        dark:bg-zinc-950
+        dark:hover:bg-zinc-900
+        dark:border-opacity-10
       "
     >
       {

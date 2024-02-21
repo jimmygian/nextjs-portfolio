@@ -25,7 +25,7 @@ export default function Contact() {
   return (
     <section ref={sectionRef} id="contact" className="sectionBasicStyle !mb-[4.5rem] flex flex-col justify-center w-[min(100% ,38rem)] m-5 sm:m-1">
         <SectionHeader>Contact me</SectionHeader>
-        <p className='text-xs text-gray-800 -mt-[1.5rem] px-[2rem]'>Please contact me directly at <a href={`mailto:${personalInfo.email}`} className='underline'>{personalInfo.email}</a> or through this form.</p>
+        <p className='text-xs text-zinc-800 -mt-[1.5rem] px-[2rem] dark:text-zinc-500'>Please contact me directly at <a href={`mailto:${personalInfo.email}`} className='underline'>{personalInfo.email}</a> or through this form.</p>
 
         <form 
           ref={formRef} 
@@ -43,7 +43,7 @@ export default function Contact() {
           <label className='text-start text-sm pt-3' htmlFor="email">Email:</label>
           <input 
             id="email" 
-            className='h-14 rounded-lg borderBlack px-4' 
+            className='h-14 rounded-lg borderBlack px-4 dark:bg-zinc-700 dark:bg-opacity-70' 
             type="email" 
             required 
             maxLength={80} 
@@ -53,7 +53,7 @@ export default function Contact() {
 
           <label className='text-start text-sm pt-3' htmlFor="message">Message:</label>
           <textarea 
-            className='borderBlack rounded-lg mb-3 px-4 pt-4' 
+            className='borderBlack rounded-lg mb-3 px-4 pt-4 dark:bg-zinc-800' 
             required 
             maxLength={5000} 
             name={`message`} 

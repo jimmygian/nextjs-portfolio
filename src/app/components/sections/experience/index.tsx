@@ -6,7 +6,7 @@ import exp from "./exp.module.css";
 import ExpCard from "./components/expCard";
 import { experiencesData } from "@lib/data";
 import { useSectionInView } from "@lib/hooks";
-import { ExperenceContextProvider } from "@app/context/dialog-context";
+import { ExperienceContextProvider } from "@/app/context/exp-context";
 import { useGlobalContext } from "@app/context/global-context";
 
 export default function Experience() {
@@ -22,7 +22,7 @@ export default function Experience() {
       <SectionHeader>Experience</SectionHeader>
       <div className={`${exp.timeline}  ${theme === "dark" ? exp.dark : ""}`}>
 
-        <ExperenceContextProvider>
+        <ExperienceContextProvider>
           {/* EXPERIENCE Cards Mapping */}
           {experiencesData.map((expData, index) => {
             let side: string = "right";
@@ -35,7 +35,7 @@ export default function Experience() {
             </div>
             );
           })}
-        </ExperenceContextProvider>
+        </ExperienceContextProvider>
 
       </div>
     </section>

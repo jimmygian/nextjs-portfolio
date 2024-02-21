@@ -35,14 +35,14 @@ export default function Header() {
           left-1/2 
           -translate-x-1/2 
           sm:rounded-full
-          dark:bg-gray-950
+          dark:bg-zinc-950
           dark:border-black/10
           dark:bg-opacity-75
         "
       ></div>
 
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-        <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:flex-nowrap sm:gap-5">
+        <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-zinc-500 sm:flex-nowrap sm:gap-5">
           {links.map((link) => (
             <li
               className={`h-3/4 flex items-center justify-center`}
@@ -62,11 +62,11 @@ export default function Header() {
                   px-3 
                   py-2 
                   mb-4 
-                  hover:text-gray-950 
+                  hover:text-zinc-950 
                   transition 
-                  dark:text-gray-500
-                  dark:hover:text-gray-300
-                  ${activeSection === link.name && `text-gray-950 dark:text-gray-200`}`
+                  dark:text-zinc-500
+                  dark:hover:text-zinc-300
+                  ${activeSection === link.name && `text-zinc-900 dark:text-zinc-100`}`
                 }
                 href={link.hash}
               >
@@ -76,7 +76,7 @@ export default function Header() {
                 {/* Background of active Link */}
                 {link.name === activeSection ? (
                   <span
-                    className={`bg-gray-200 rounded-full absolute inset-0 -z-10 dark:bg-gray-800`}
+                    className={`bg-zinc-200 rounded-full absolute inset-0 -z-10 dark:bg-zinc-800`}
                   >
                   </span>
                 ) : (

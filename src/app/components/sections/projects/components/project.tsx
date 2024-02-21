@@ -51,7 +51,7 @@ export default function ProjectCard(props: ProjectProps) {
         ${/*articleInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck} scale-[${ratio.current}]` : "opacity-0" */ ""} 
         group 
         relative
-        bg-gray-100 
+        bg-zinc-100 
 
         m-6 
         max-w-[42rem] 
@@ -65,16 +65,17 @@ export default function ProjectCard(props: ProjectProps) {
         sm:flex-row 
         justify-between 
         sm:even:flex-row-reverse 
-        hover:bg-gray-200 
+        hover:bg-zinc-200 
         transition 
         outline-none
         focus:scale-[1.03]
-        focus:bg-gray-200 
+        focus:bg-zinc-200 
         cursor-pointer
-        dark:bg-white/10 
-        dark:hover:bg-white/20
+        dark:bg-zinc-800
+        dark:bg-opacity-90
+        dark:hover:bg-zinc-800
         dark:text-white
-        dark:focus:bg-gray-500
+        dark:focus:bg-zinc-700
 
       `}
     >
@@ -106,7 +107,7 @@ export default function ProjectCard(props: ProjectProps) {
           ref={textRef}
           className={`
             ${"" /* textInData.shown ? `${animate.animate} ${animate.up} ${animate.anmDur05} ${animate.anmFillBck}` : "opacity-0" */}
-            mt-2 leading-relaxed text-gray-500 dark:text-white/70`}
+            mt-2 leading-relaxed text-zinc-500 dark:text-white/70`}
         >
           {description}
         </p>
@@ -176,7 +177,7 @@ export default function ProjectCard(props: ProjectProps) {
           group-focus:block
           sm:block
           p-[3rem] 
-          text-gray-600 
+          text-zinc-600 
           text-xl 
           font-bold 
           tracking-widest 
