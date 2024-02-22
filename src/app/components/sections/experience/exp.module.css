@@ -261,3 +261,47 @@
 }
 
 
+
+/* For really small screens */
+@media (max-width: 320px) {
+  .container {
+    width: 80vw;
+    inset: 0;
+    text-align: left;
+  }
+
+  .leftContainer,
+  .rightContainer {
+    margin: 0;
+  }
+
+  .iconContainer {
+    display: none;
+  }
+
+  .dateDivLeft,
+  .dateDivRight {
+    position: block;
+    display: none;
+  }
+
+  .leftContainer > .textBox,
+  .rightContainer > .textBox {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  
+  }
+
+
+
+  .textBox {
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+  }
+
+  .container button {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
