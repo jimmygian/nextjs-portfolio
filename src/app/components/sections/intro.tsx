@@ -20,7 +20,7 @@ export default function Intro() {
     <section
       ref={sectionRef}
       id="home"
-      className="mt-[4.3rem] sm:mt-[2rem] h-[83vh] sm:h-[40vh] scroll-mt-[100rem]"
+      className="mx-[0.2rem] mt-[1.3rem] xs:mt-[4.3rem] sm:mt-[2rem] vh100 sm:h-[40vh] scroll-mt-[100rem]"
     >
       {/* Image */}
       <div
@@ -45,7 +45,7 @@ export default function Intro() {
 
       {/* Hero text */}
       <h1
-        className={`${animate.animate} ${animate.up} ${animate.anmDur04} text-center pt-2 text-3xl sm:text-4xl ps-10 pe-10 max-w-[50rem] font-medium !leading-[1.5]`}
+        className={`${animate.animate} ${animate.up} ${animate.anmDur04} text-center pt-2 text-xl xs:text-3xl sm:text-4xl ps-10 pe-10 max-w-[50rem] font-medium !leading-[1.5]`}
       >
         <span className="font-bold">{`Hello, I'm ${personalInfo.name}.`}</span> A{" "}
         <span className="font-bold">Front End Developer</span> with a passion
@@ -57,7 +57,7 @@ export default function Intro() {
         className={`${animate.animate} ${animate.up} ${animate.anmDur04} ${animate.anmDel04} ${animate.anmFillBck} flex items-center justify-center gap-3 mt-[1rem] flex-wrap`}
       >
         <Link
-          className="group bg-zinc-900 text-white shadow-md shadow-black/10 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-110 active:scale-105 transition dark:shadow-black/10 dark:bg-gray-600"
+          className="group xs-styles bg-zinc-900 text-white shadow-md shadow-black/10 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-110 active:scale-105 transition dark:shadow-black/10 dark:bg-gray-600"
           href="#contact"
           onClick={() => {
             setActiveSection("Contact");
@@ -68,12 +68,12 @@ export default function Intro() {
           <BsArrowRight className="opacity-70 group-hover:translate-x-2 transition" />
         </Link>
         <a
-          className="group bg-white text-zinc-900 px-7 py-3 flex items-center gap-2 rounded-full shadow-sm shadow-[#00000071] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition dark:bg-white/10 dark:text-white/90 dark:shadow-md"
+          className="group xs-styles bg-white text-zinc-900 px-7 py-3 flex items-center gap-2 rounded-full shadow-sm shadow-[#00000071] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition dark:bg-white/10 dark:text-white/90 dark:shadow-md"
           href="/CV-ph.pdf"
           download={true}
         >
           Download CV{" "}
-          <HiDownload className="opacity-70 group-hover:scale-125 transition" />
+          <HiDownload className="opacity-70  group-hover:scale-125 transition" />
         </a>
         <a
           href="https://linkedin.com/jimmygian"

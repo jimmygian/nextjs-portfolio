@@ -17,9 +17,10 @@ export default function Header() {
       {/* Header Background */}
       <div 
         className="
+          h-[4rem]
           fixed 
           top-0 
-          w-[100vw] h-14 
+          w-[100vw]  
           rounded-none 
           bg-white 
           shadow-md 

@@ -17,7 +17,7 @@ export default function About() {
       id="about"
       className={`
       ${animate.animate} ${animate.up} ${animate.anmDur04} ${animate.anmDel05} ${animate.anmFillBck} 
-      sectionBasicStyle mx-10 max-w-[45rem] leading-8`}
+      sectionBasicStyle mx-[1.5rem] text-pretty xs-styles xs:mx-10 max-w-[45rem] leading-8`}
     >
       <SectionHeader>About me</SectionHeader>
       <p className="mb-3">

@@ -23,7 +23,7 @@ export default function Contact() {
     console.log("contact")
 
   return (
-    <section ref={sectionRef} id="contact" className="sectionBasicStyle !mb-[4.5rem] flex flex-col justify-center w-[min(100% ,38rem)] m-5 sm:m-1">
+    <section ref={sectionRef} id="contact" className="sectionBasicStyle !mb-[4.5rem] flex flex-col justify-center w-[98%] lg:w-[54rem] p-5 xs:m-5 sm:m-1">
         <SectionHeader>Contact me</SectionHeader>
         <p className='text-xs text-zinc-800 -mt-[1.5rem] px-[2rem] dark:text-zinc-500'>Please contact me directly at <a href={`mailto:${personalInfo.email}`} className='underline'>{personalInfo.email}</a> or through this form.</p>
 

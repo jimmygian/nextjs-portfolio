@@ -6,6 +6,15 @@ html {
     scroll-behavior: smooth !important;
 }
 
+:root {
+    --header-height: 4rem;
+}
+
+.vh100 {
+    height: calc(100vh - var(--header-height));
+}
+
+
 .borderBlack {
     @apply border border-black/10;
 }
@@ -13,3 +22,8 @@ html {
 .sectionBasicStyle {
     @apply text-center scroll-mt-28 mb-28 sm:mb-40;
 }
+
+.xs-styles {
+    @apply text-sm leading-5 xs:text-[1rem] xs:leading-relaxed 
+}
+
