@@ -42,7 +42,7 @@ export default function ExpCard({ side, data }: extCardProps) {
       setExpandedContainer(``)
       btnRef.current?.blur();
     }, 100)
-  }, [inView])
+  }, [inView, setExpandedContainer])
 
   return (
     <div ref={expCardRef} className={`${exp.expCardWrapper}`}>

@@ -43,11 +43,11 @@ export function useIntersectionObserver(ref: RefObject<Element>, thresholdArr: T
             
         }
 
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
+        // return () => {
+        //     if (ref.current) {
+        //         observer.unobserve(ref.current);
+        //     }
+        // };
     }, [ref]);
 
     return intersectionData;

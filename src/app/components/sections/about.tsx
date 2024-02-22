@@ -29,7 +29,7 @@ export default function About() {
         technical skills and creativity.
       </p>
       <p>
-        When I'm not coding, I enjoy making music, watching shows, wokring out,
+        When I&apos;m not coding, I enjoy making music, watching shows, wokring out,
         and learning new random skills. I am curently teaching myself math!
       </p>
     </section>
