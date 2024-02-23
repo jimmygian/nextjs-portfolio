@@ -54,8 +54,8 @@ export default function ExpCard({ side, data }: extCardProps) {
         className={`${exp.container} ${
           side === "left" ? exp.leftContainer : exp.rightContainer
         } 
-          ${shown && side === "left" ? exp.appearLeft : "opacity-0"}
-          ${shown && side === "right" ? exp.appearRight : "opacity-0"}
+          ${inView && side === "left" ? exp.appearLeft : "opacity-0"}
+          ${inView && side === "right" ? exp.appearRight : "opacity-0"}
           ${
             /*
             inView && expandedContainer === data.id && expand ? exp.expand : exp.shrink
