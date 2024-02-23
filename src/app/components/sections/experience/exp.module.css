@@ -87,10 +87,10 @@
 /* Container's text Box */
 .textBox {
   position: relative;
-  padding: clamp(10px, 10%, 40px) clamp(2.7rem, 5%, 40px) clamp(10px, 10%, 40px) clamp(5px, 5%, 40px);
+  padding: clamp(10px, 10%, 40px) clamp(1.3rem, 5%, 40px) clamp(10px, 10%, 40px) clamp(0.6rem, 5%, 40px);
   background-color: var(--bg-expCard);
   border-radius: 3px;
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.85rem, 1.8vw, 1.15rem);
   width: 100%;
   transition: width 0.7s;
   transition: height 0.7s;
@@ -101,7 +101,7 @@
   font-size: larger;
 }
 .rightContainer > .textBox {
-  padding: clamp(10px, 10%, 40px) clamp(5px, 5%, 40px) clamp(10px, 10%, 40px) clamp(2.7rem, 5%, 40px);
+  padding: clamp(10px, 10%, 40px) clamp(0.6rem, 5%, 40px) clamp(10px, 10%, 40px) clamp(1.3rem, 5%, 40px);
 }
 
 
