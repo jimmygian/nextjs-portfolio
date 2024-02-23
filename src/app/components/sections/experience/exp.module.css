@@ -191,7 +191,7 @@
 @keyframes appearLeft {
   0% {
     opacity: 0;
-    transform: translateX(-5rem);
+    transform: translateX(-1rem);
   }
 
   100% {
@@ -202,7 +202,7 @@
 @keyframes appearRight {
   0% {
     opacity: 0;
-    transform: translateX(5rem);
+    transform: translateX(1rem);
   }
 
   100% {
