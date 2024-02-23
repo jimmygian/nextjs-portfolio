@@ -23,6 +23,7 @@ module.exports = {
       textColor: ['xs'],
       fontSize: ['xs'],
       lineHeight: ['xs'],
+      paddingEnd: ['xs'],
       // ... add other variants as needed
     },
   },
