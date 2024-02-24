@@ -12,6 +12,8 @@ type ActiveSectionContextType = {
   setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
   theme: Theme;
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+  sideMenuOpen: boolean;
+  setSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const ActiveSectionContext =
@@ -23,6 +25,7 @@ export default function ActiveSectionContextProvider({
   const [activeSection, setActiveSection] = useState<SectionName>("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
   const [theme, setTheme] = useState<Theme>("none");
+  const [sideMenuOpen, setSideMenuOpen] = useState(false);
 
 
   useEffect(() => {
@@ -54,6 +57,8 @@ export default function ActiveSectionContextProvider({
         setTimeOfLastClick,
         theme,
         setTheme,
+        sideMenuOpen,
+        setSideMenuOpen,
       }}
     >
       {children}

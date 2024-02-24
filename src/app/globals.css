@@ -8,6 +8,14 @@ html {
 
 :root {
     --header-height: 4rem;
+    --cp1-white1: #f2f2f2;
+    --cp1-color1: #BF7950;
+    --cp1-color2: #F2D091;
+    --cp1-black1: #142426;
+    --cp1-black2: #050B0D;
+    --cp1-midbrown:  #8D5A38;
+    --cp1-green: #6A7864; 
+    --cp1-cream: #E8DFCA; 
 }
 
 .vh100 {

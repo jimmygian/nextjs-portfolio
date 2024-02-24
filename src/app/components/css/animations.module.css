@@ -130,6 +130,16 @@
 
 /* Animations */
 
+@keyframes slide-left {
+  from {
+    transform: translateX(25.7rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes slide-down {
   from {
     transform: translateY(-1.7rem);
@@ -213,6 +223,9 @@
   transform-origin: bottom right;
 }
 
+.animate.left {
+  animation: slide-left .5s ease-in;
+}
 .animate.up {
   animation: slide-up .5s ease-in;
 }
