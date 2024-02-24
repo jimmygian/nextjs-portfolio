@@ -7,6 +7,7 @@ import { links } from "@lib/data";
 import Link from "next/link";
 import animate from "@app/components/css/animations.module.css";
 import { useGlobalContext } from "@/app/context/global-context";
+import ThemeSwitch from "@/app/components/theme-switch";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick, sideMenuOpen, setSideMenuOpen } =
@@ -148,6 +149,7 @@ export default function Header() {
                   );
                 })}
               </ul>
+              <ThemeSwitch />
             </nav>
           </section>
       </section>
