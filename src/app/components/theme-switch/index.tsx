@@ -5,10 +5,14 @@ import { Bs0Circle, BsMoon, BsSun, BsThermometer } from "react-icons/bs";
 import { Theme } from '@lib/types'
 import { useGlobalContext } from "@/app/context/global-context";
 
+type ThemSwitchProps = {
+  position?: "block";
+}
 
-
-export default function ThemeSwitch() {
+export default function ThemeSwitch(props: ThemSwitchProps) {
   const {theme, setTheme} = useGlobalContext();
+  const {position} = props;
+
 
   console.log(theme)
   const toggleTheme = () => {
@@ -30,12 +34,13 @@ export default function ThemeSwitch() {
     <button
       aria-label="toggle theme mode"
       onClick={toggleTheme}
-      className="
-        fixed 
-        bottom-5 right-5 
+      className={`
+        ${position ? position : 'fixed'} 
+        bottom-[4%]
+        right-[10%]
         flex justify-center items-center
         w-[3rem] 
-        h-[3rem] 
+        h-[3rem]
         bg-zinc-50 
         bg-opacity-80 
         backdrop-blur[0.5rem] 
@@ -51,10 +56,10 @@ export default function ThemeSwitch() {
         dark:bg-zinc-950
         dark:hover:bg-zinc-900
         dark:border-opacity-10
-      "
+      `}
     >
       {
-        theme === "light" ? <BsSun /> : theme === "dark" ? <BsMoon /> : <BsThermometer />
+        theme === "light" ? <BsSun className={`w-[1.1rem]`} /> : theme === "dark" ? <BsMoon className={`w-[1.1rem]`}/> : <BsThermometer className={`w-[1.1rem]`}/>
       }
     </button>
   );

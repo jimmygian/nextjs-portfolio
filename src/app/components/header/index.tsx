@@ -150,8 +150,10 @@ export default function Header() {
                     </li>
                   );
                 })}
+                <li className="translate-y-10">
+                  <ThemeSwitch position="block"/>
+                </li>
               </ul>
-              <ThemeSwitch />
             </nav>
           </section>
       </section>
