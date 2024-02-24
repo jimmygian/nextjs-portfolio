@@ -141,7 +141,9 @@ export default function Header() {
               <ul className="flex mt-10 min-h-[60vh] flex-col justify-evenly items-end pe-[14%]">
                 {links.map((link) => {
                   return (
-                    <li className="text-[--cp1-black1] dark:text-[--cp1-white1]">
+                    <li
+                      key={link.hash} 
+                      className="text-[--cp1-black1] dark:text-[--cp1-white1]">
                       <Link onClick={toggleMenu} href={link.hash} className="text-lg xs:text-2xl">
                         {link.name}
                       </Link>
