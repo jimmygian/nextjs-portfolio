@@ -45,7 +45,7 @@ export default function HeroNew() {
 
       {/* Hero */}
       <div
-        className={`${hero.hero} flex flex-col items-center justify-center mt-[2rem] xs:mt-[4rem] px-4 xs:px-5 xs:mx-5 relative`}
+        className={`${hero.hero} flex flex-col items-center justify-center mt-[2rem] xs:mt-[4rem] sm:mt-[30vh] px-4 xs:px-5 xs:mx-5 relative`}
       >
         {/* Hero text */}
 
@@ -136,14 +136,9 @@ export default function HeroNew() {
               flex-wrap
               justify-end
               gap-3 
-              mt-[30%]
-              xs:mt-[50%] 
+              mt-[6rem]
+              xs:mt-[10rem] 
               sm:mt-[7rem] 
-              scale-[0.8]
-              xs:scale-[0.9]
-              sm:scale-1
-              translate-x-5
-              sm:translate-x-0
             `}
         >
           <Link
