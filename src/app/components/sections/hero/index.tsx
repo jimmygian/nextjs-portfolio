@@ -45,7 +45,7 @@ export default function HeroNew() {
 
       {/* Hero */}
       <div
-        className={`${hero.hero} flex flex-col items-center justify-center mt-[10vh] xs:mt-[15vh] sm:mt-[30vh] px-4 xs:px-5 xs:mx-5 relative`}
+        className={`${hero.hero} flex flex-col items-center justify-center mt-[2rem] xs:mt-[4rem] px-4 xs:px-5 xs:mx-5 relative`}
       >
         {/* Hero text */}
 
@@ -108,7 +108,8 @@ export default function HeroNew() {
                   max-w-[20rem]
                   sm:max-w-[30rem]
                   ps-5
-                  text-xl
+                  text-md
+                  xs:text-xl
                   ${
                     inView
                       ? `${animate.animate} ${animate.right} ${animate.anmDur05} ${animate.anmDel03} ${animate.anmFillBck}`
@@ -136,8 +137,13 @@ export default function HeroNew() {
               justify-end
               gap-3 
               mt-[30%]
-              xs:mt-[60%] 
+              xs:mt-[50%] 
               sm:mt-[7rem] 
+              scale-[0.8]
+              xs:scale-[0.9]
+              sm:scale-1
+              translate-x-5
+              sm:translate-x-0
             `}
         >
           <Link
