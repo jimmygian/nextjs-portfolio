@@ -1,0 +1,16 @@
+.heroContent {
+    padding: 0 0;
+    height: 100vh;
+}
+
+.hero {
+    position: relative;
+}
+
+.heroImg {
+    position: absolute;
+    z-index: -10;
+    object-fit: cover;
+    opacity: 70%;
+    background-repeat: repeat !important;
+}

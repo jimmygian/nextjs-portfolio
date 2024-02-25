@@ -4,8 +4,8 @@ import React, { useState, createContext, useContext, useEffect } from "react";
 import type { SectionName, Theme } from "@lib/types";
 
 
-type ActiveSectionContextProviderProps = { children: React.ReactNode };
-type ActiveSectionContextType = {
+type GlobalContextProviderProps = { children: React.ReactNode };
+type GlobalContextType = {
   activeSection: SectionName;
   setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
   timeOfLastClick: number;
@@ -16,12 +16,12 @@ type ActiveSectionContextType = {
   setSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const ActiveSectionContext =
-  createContext<ActiveSectionContextType | null>(null);
+const GlobalSectionContext =
+  createContext<GlobalContextType | null>(null);
 
-export default function ActiveSectionContextProvider({
+export default function GlobalContextProvider({
   children,
-}: ActiveSectionContextProviderProps) {
+}: GlobalContextProviderProps) {
   const [activeSection, setActiveSection] = useState<SectionName>("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
   const [theme, setTheme] = useState<Theme>("none");
@@ -49,7 +49,7 @@ export default function ActiveSectionContextProvider({
   }, [])
 
   return (
-    <ActiveSectionContext.Provider
+    <GlobalSectionContext.Provider
       value={{
         activeSection,
         setActiveSection,
@@ -62,16 +62,16 @@ export default function ActiveSectionContextProvider({
       }}
     >
       {children}
-    </ActiveSectionContext.Provider>
+    </GlobalSectionContext.Provider>
   );
 }
 
 export function useGlobalContext() {
-  const context = useContext(ActiveSectionContext);
+  const context = useContext(GlobalSectionContext);
 
   if (context === null) {
     throw new Error(
-      "useGlobalContext must be used within an ActiveSectionContextProvider"
+      "useGlobalContext must be used within an GlobalContextProvider"
     );
   }
 
