@@ -2,8 +2,8 @@
 
 import React from "react";
 import SectionHeader from "@app/components/sections/section-header";
-import animate from "@app/components/css/animations.module.css";
-import { useSectionInView } from "@/lib/hooks";
+import animate from "@app/css/animations.module.css";
+import { useSectionInView } from "@lib/hooks";
 
 export default function About() {
   const { sectionRef } = useSectionInView("About");

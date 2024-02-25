@@ -4,9 +4,8 @@ import React, { useRef } from 'react';
 import SectionHeader from '@app/components/sections/section-header';
 import { useIntersectionObserver, useSectionInView } from '@lib/hooks';
 import { personalInfo } from '@lib/data';
-import animate from '@app/components/css/animations.module.css'
+import animate from '@app/css/animations.module.css'
 import { sendEmail } from '@/actions/sendEmail';
-import { useFormStatus } from 'react-dom';
 import SubmitBtn from './components/submit-btn';
 import toast from 'react-hot-toast';
 

@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
-// import { motion } from 'framer-motion'
-import { BiHomeAlt2 } from "react-icons/bi";
-import { links } from "@lib/data";
+import React from "react";
 import Link from "next/link";
-import animate from "@app/components/css/animations.module.css";
-import { useGlobalContext } from "@/app/context/global-context";
-import ThemeSwitch from "@/app/components/theme-switch";
+import { BiHomeAlt2 } from "react-icons/bi";
+import animate from "@app/css/animations.module.css";
+import { useGlobalContext } from "@app/context/global-context";
+import ThemeSwitch from "@app/components/theme-switch";
+import { links } from "@lib/data";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick, sideMenuOpen, setSideMenuOpen } =

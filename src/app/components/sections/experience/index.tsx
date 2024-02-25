@@ -6,7 +6,7 @@ import exp from "./exp.module.css";
 import ExpCard from "./components/expCard";
 import { experiencesData } from "@lib/data";
 import { useSectionInView } from "@lib/hooks";
-import { ExperienceContextProvider } from "@/app/context/exp-context";
+import { ExperienceContextProvider } from "@app/context/exp-context";
 import { useGlobalContext } from "@app/context/global-context";
 
 export default function Experience() {

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Bs0Circle, BsMoon, BsSun, BsThermometer } from "react-icons/bs";
 import { Theme } from '@lib/types'
-import { useGlobalContext } from "@/app/context/global-context";
+import { useGlobalContext } from "@app/context/global-context";
 
 type ThemSwitchProps = {
   position?: "block";

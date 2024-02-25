@@ -8,14 +8,28 @@ html {
 
 :root {
     --header-height: 4rem;
+    --cp1-white: #fafafa;
     --cp1-white1: #f2f2f2;
-    --cp1-color1: #BF7950;
-    --cp1-color2: #F2D091;
+    
+    --cp1-gray1: #A6A29C;
+    --cp1-gray2: #595959;
+    --cp1-gray3: #262521;
+    
+    
     --cp1-black1: #142426;
     --cp1-black2: #050B0D;
-    --cp1-midbrown:  #8D5A38;
-    --cp1-green: #6A7864; 
-    --cp1-cream: #E8DFCA; 
+   
+    --cp1-cream1: #E8DFCA;
+    --cp1-cream2: #F2D091;
+    --cp1-brown1: #BF7950;
+    --cp1-brown2:  #8D5A38;
+    --cp1-green1: #6A7864;
+
+    --cp2-blue1: #5F6A73;
+    --cp2-blue2: #141C26;
+    --cp2-color1: #BFA099;
+    --cp2-color2: #8C6A56;
+
 }
 
 .vh100 {

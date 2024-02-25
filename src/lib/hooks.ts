@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useGlobalContext } from "@/app/context/global-context";
+import { useGlobalContext } from "@app/context/global-context";
 
 import type { RefObject } from "react";
 import type { SectionName, ThresholdValue, IntersectionData } from "@lib/types";

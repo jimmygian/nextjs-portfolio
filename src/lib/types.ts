@@ -1,4 +1,4 @@
-import { links } from "@/lib/data";
+import { links } from "@lib/data";
 import type { RefObject } from "react";
 import { experiencesData } from "@lib/data";
 import { personalInfo } from "@lib/data";

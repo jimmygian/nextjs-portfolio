@@ -5,7 +5,7 @@ import exp from "../exp.module.css";
 import Image from "next/image";
 import graduateIcon from "@public/icons/graduate-cap-svgrepo-com.svg";
 import type { expDataObj } from "@lib/types";
-import { useExpCardDialogContext } from "@/app/context/exp-context";
+import { useExpCardDialogContext } from "@app/context/exp-context";
 import { useIntersectionObserver } from "@lib/hooks";
 
 type extCardProps = {

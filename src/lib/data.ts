@@ -4,11 +4,11 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
 // Importing images from public lib (Static Img Data)
-import project1_pic_CVM from "@public/project-CVMaster.png";
-import project2_pic_WW from "@public/project-WalletWizzard.png";
-import project3_pic_nextJSP from "@public/project-nextjsPtf.png";
-import project4_pic_AudioOp from "@public/project-AudioOp.png";
-import project5_pic_WebmC from "@public/project-WebMConv.png";
+import project1_pic_CVM from "@public/images/projects/project-CVMaster.png";
+import project2_pic_WW from "@public/images/projects/project-WalletWizzard.png";
+import project3_pic_nextJSP from "@public/images/projects/project-nextjsPtf.png";
+import project4_pic_AudioOp from "@public/images/projects/project-AudioOp.png";
+import project5_pic_WebmC from "@public/images/projects/project-WebMConv.png";
 
 export const personalInfo = {
   name: "Dimitris",

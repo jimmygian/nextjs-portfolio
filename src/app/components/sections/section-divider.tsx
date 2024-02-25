@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import animate from "@app/components/css/animations.module.css";
+import animate from "@app/css/animations.module.css";
 
 export default function SectionDiviter() {
   return (
