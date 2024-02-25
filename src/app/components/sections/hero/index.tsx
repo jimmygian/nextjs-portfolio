@@ -9,6 +9,7 @@ import animate from "@app/css/animations.module.css";
 import { personalInfo } from "@lib/data";
 import { useGlobalContext } from "@app/context/global-context";
 import { useSectionInView } from "@lib/hooks";
+import profilePic from "@public/images/prof-pic-linkedin.jpeg"
 import backgroundLight from "@public/images/bgs/abstract-envelope-light.svg";
 import backgroundDark from "@public/images/bgs/abstract-envelope-dark.svg";
 import hero from "./hero.module.css";
@@ -49,7 +50,7 @@ export default function Hero() {
             <div className="relative">
               <Image
                 className="w-[7rem] h-[7rem] border p-[0.2rem] shadow-sm transition-shadow shadow-[#6394bf] rounded-full"
-                src="/prof-pic-linkedin.jpeg"
+                src={profilePic}
                 alt={`Profile Picture of ${personalInfo.fullname}.`}
                 height={192}
                 width={192}
