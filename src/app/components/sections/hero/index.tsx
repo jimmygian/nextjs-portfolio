@@ -130,7 +130,7 @@ export default function HeroNew() {
           </div>
         </div>
 
-        <Buttons inView={inView}/>
+        <Buttons inView={inView} relative={true}/>
 
       </div>
     </section>

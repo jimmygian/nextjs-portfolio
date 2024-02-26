@@ -13,6 +13,7 @@ type ButtonsType = {
   inView?: boolean;
   shown?: boolean;
   absolute?: boolean;
+  relative?: boolean;
   top?: string;
   bottom?: string;
   right?: string;
@@ -20,7 +21,7 @@ type ButtonsType = {
   className?: string;
 }
 
-export default function Buttons({inView, shown, absolute, className, top, bottom, left, right}: ButtonsType) {
+export default function Buttons({inView, shown, absolute, className, top, bottom, left, right, relative}: ButtonsType) {
 
   const { setActiveSection, setTimeOfLastClick } = useGlobalContext()
 
@@ -31,8 +32,8 @@ export default function Buttons({inView, shown, absolute, className, top, bottom
         
         ${
           absolute
-            ? `sm:hidden absolute bottom-[${bottom ? bottom : `20%`}] right-[${right ? right : `7%`}] top-[${top ? top : ``}] left-[${left ? left : ``}]`
-            : `hidden sm:flex`
+            ? `sm:hidden absolute bottom-[11rem] right-[2.5rem]`
+            : ``
         }
         ${
           className ? className : ""
@@ -42,6 +43,7 @@ export default function Buttons({inView, shown, absolute, className, top, bottom
             ? `${animate.animate} ${animate.up} ${animate.anmDur07} ${animate.anmDel07} ${animate.anmFillBck}`
             : "opacity-0"
         }
+        ${relative ? `hidden sm:flex` : ``}
         flex 
         flex-wrap
         justify-end
