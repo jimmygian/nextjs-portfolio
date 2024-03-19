@@ -66,7 +66,7 @@ export default function Buttons({inView, shown, absolute, className, top, bottom
       </Link>
       <a
         className="!text-sm sm:text-base px-3 py-2 sm:px-7 sm:py-3 group xs-styles bg-white text-zinc-900 flex items-center gap-2 rounded-full shadow-sm shadow-[#00000071] outline-none focus:scale-105 hover:scale-110 active:scale-105 transition dark:bg-white/10 dark:text-white/90 dark:shadow-md"
-        href="/CV-ph.pdf"
+        href="/DimitrisGiannoulis-CV.pdf"
         download={true}
       >
         Download CV{" "}
@@ -74,7 +74,7 @@ export default function Buttons({inView, shown, absolute, className, top, bottom
       </a>
       <div className="flex gap-2">
         <a
-          href="https://linkedin.com/jimmygian"
+          href="https://linkedin.com/in/jimmygian"
           target="_blank"
           className="p-[0.8rem] sm:p-4  text-sm sm:text-base bg-white text-zinc-700 flex items-center gap-2 rounded-full shadow-sm shadow-[#000000a4] outline-none focus:scale-[1.15] hover:scale-110 active:scale-[1.15] transition dark:bg-white/10 dark:text-white/60 dark:shadow-md"
         >
